@@ -490,35 +490,104 @@ i.s1,.legend i.s1{background:var(--pass)} i.s2,.legend i.s2{background:#D09A2E} 
   .dlogo{margin:0 6px 0 0;flex:none}
   .dside span{flex:none}
   .mt th,.mt td{padding:5px 6px;white-space:nowrap}
+  .mk-dash .mt th:nth-child(5),.mk-dash .mt td:nth-child(5){display:none}
 }
+
+/* ================= dashboard layout ================= */
+:root{--bg:#F5F7F9;--bg-alt:#F5F7F9;--surface:#FFFFFF;--line:#E8EDF1;--ink:#252A31;--ink-2:#3B4450;--muted:#5F738C;
+  --display:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--sbw:272px;--sb:#0D5C6B;--sb-ink:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1514;--bg-alt:#0F1514;--surface:#172120;--line:#26322F;--ink:#E6ECEA;--ink-2:#C6D1CE;--muted:#93A6A1;--sb:#133A40;--sb-ink:#E6ECEA}}
+:root[data-theme="dark"]{--bg:#0F1514;--bg-alt:#0F1514;--surface:#172120;--line:#26322F;--ink:#E6ECEA;--ink-2:#C6D1CE;--muted:#93A6A1;--sb:#133A40;--sb-ink:#E6ECEA}
+html{scroll-padding-top:24px}
+body{background:var(--bg)}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sbw);background:var(--sb);color:var(--sb-ink);display:flex;flex-direction:column;padding:26px 16px 20px;overflow-y:auto;z-index:30;padding-top:calc(26px + env(safe-area-inset-top,0px))}
+.sb-brand{display:flex;align-items:center;justify-content:center;gap:8px;color:inherit;text-decoration:none;font-weight:800;font-size:18px;margin-bottom:22px;white-space:nowrap}
+.sb-brand em{font-style:normal;background:var(--sb-ink);color:var(--sb);border-radius:6px;padding:1px 8px;font-size:13px;font-weight:800}
+.sb-nav{display:grid;gap:4px}
+.sb-nav a{display:flex;align-items:center;gap:14px;padding:11px 16px;border-radius:10px;color:inherit;text-decoration:none;font-weight:700;font-size:16px;transition:background .15s}
+.sb-nav a svg{width:18px;height:18px;fill:currentColor;flex:none}
+.sb-nav a:hover{background:color-mix(in srgb,var(--sb-ink) 14%,transparent)}
+.sb-nav a.current{background:var(--sb-ink);color:var(--sb)}
+.sb-nav em.new{margin-left:auto;font:700 9.5px var(--mono);letter-spacing:.06em;font-style:normal;padding:2px 6px;border-radius:4px;background:color-mix(in srgb,var(--sb-ink) 22%,transparent)}
+.sb-nav a.current em.new{background:var(--sb);color:var(--sb-ink)}
+.sb-bottom{margin-top:auto;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--sb-ink) 22%,transparent);display:grid;gap:12px}
+.sb-row{display:flex;align-items:center;justify-content:space-between;font-size:13.5px;font-weight:600}
+.sb-bottom small{font-size:12px;opacity:.8}
+.sb-btn{display:block;text-align:center;background:var(--sb-ink);color:var(--sb);border-radius:10px;padding:11px 16px;font-weight:700;font-size:15px;text-decoration:none}
+.sidebar .lswitch{background:color-mix(in srgb,var(--sb-ink) 16%,transparent);border-color:transparent}
+.sidebar .lswitch .thumb{background:var(--sb-ink)!important}
+.sidebar .lswitch button{color:color-mix(in srgb,var(--sb-ink) 80%,transparent)}
+.sidebar .lswitch button[aria-pressed="true"]{color:var(--sb)}
+.sidebar .tswitch{background:color-mix(in srgb,var(--sb-ink) 16%,transparent);border-color:transparent}
+.sidebar .tswitch .t-ico{color:var(--sb-ink)}
+.sidebar .tswitch .knob{background:var(--sb-ink);color:var(--sb);box-shadow:none}
+.menu-fab{display:none}
+.sb-scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:25}
+.app-main{margin-left:var(--sbw);min-height:100vh;padding-block:32px 8px}
+/* page blocks -> dashboard cards */
+.app-main .wrap{max-width:none;padding-inline:0;margin:0}
+.app-main .page-head,.app-main .p-hero,.app-main header.hero,.app-main .stats,.app-main section.block,.app-main section.proj,.app-main footer.site{width:min(1160px,calc(100% - 64px));margin:0 auto 22px}
+.app-main .page-head,.app-main .p-hero{padding:4px 0 2px}
+.ph-title,.p-hero h2{font-size:clamp(30px,3.6vw,40px);font-weight:800;letter-spacing:-.01em}
+.page-head .lede,.p-hero .lede{font-size:16.5px;color:var(--muted)}
+.app-main header.hero,.app-main section.block,.app-main section.proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px 32px;box-shadow:0 1px 2px rgba(20,30,40,.03)}
+.app-main section.block.alt,.app-main section.proj.alt{background:var(--surface)}
+.app-main section#contact{background:none;border:0;padding:0;box-shadow:none}
+.page-head + section.block{padding-top:30px}
+.hero .wrap{gap:40px}
+.hero h1{font-size:clamp(38px,4.6vw,58px)}
+/* stat pills like the dashboard */
+.app-main .stats{background:none;border:0}
+.app-main .stats .wrap{display:flex;flex-wrap:wrap;gap:12px}
+.app-main .stat{background:var(--surface);border:1px solid var(--line)!important;border-radius:12px;padding:12px 18px;flex:1 1 150px}
+.app-main .stat b{font-size:22px;font-family:var(--display)}
+.app-main .stat span{font-size:14.5px;color:var(--muted);margin-top:4px}
+/* headings inside cards */
+.sec-head{margin-bottom:22px}
+.sec-head h2{font-size:26px;font-weight:700}
+.sec-head p{color:var(--muted);font-size:16px}
+/* nested cards use the page grey */
+.xcard,.sop,.flow8 li,.edu-card,.tl-card,.skill,.case,.cvcard,.wf li,.p-jump a{background:var(--bg)!important}
+.case,.skill,.tl-card,.edu-card{box-shadow:none}
+.tl::before{background:var(--line)}
+.p-jump a{border-color:var(--line)}
+footer.site{padding:10px 0 24px}
+.mock{box-shadow:0 1px 2px rgba(20,30,40,.05),0 6px 18px rgba(20,30,40,.06)}
+/* mobile: drawer like the dashboard */
+@media (max-width:960px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 0 40px rgba(0,0,0,.25)}
+  body.nav-open .sidebar{transform:none}
+  .menu-fab{display:grid;place-items:center;position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:12px;z-index:26;width:44px;height:40px;border:0;border-radius:10px;background:var(--sb);color:var(--sb-ink);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+  .menu-fab svg{width:20px;height:20px}
+  .app-main{margin-left:0;padding-top:66px}
+  .app-main .page-head,.app-main .p-hero,.app-main header.hero,.app-main .stats,.app-main section.block,.app-main section.proj,.app-main footer.site{width:calc(100% - 24px);margin-bottom:14px}
+  .app-main header.hero,.app-main section.block,.app-main section.proj{padding:22px 18px}
+}
+@media (prefers-reduced-motion:reduce){.sidebar{transition:none}}
 </style>
 </head>
 <body>
 
-<nav aria-label="Main" class="nav">
-<div class="wrap">
-<a class="brand" href="#overview"><span class="mono-mark">JPT</span><span>Jaka Putra Tikalung</span></a>
-<ul><li><a class="tab" data-id="Ringkasan" href="#overview">Overview</a></li><li><a class="tab" data-id="Pengalaman" href="#experience">Experience</a></li><li><a class="tab is-new" data-id="Proyek" href="#projects">Projects</a></li><li><a class="tab" data-id="Keahlian" href="#skills">Skills</a></li><li><a class="tab" data-id="Kepemimpinan" href="#leadership">Leadership</a></li><li><a class="tab" data-id="Tentang" href="#about">About</a></li></ul>
-<div class="nav-actions">
-<div aria-label="Language / Bahasa" class="lswitch" data-on="en" id="langSwitch" role="group">
+<button type="button" class="menu-fab" id="menuBtn" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<aside class="sidebar" id="sidebar">
+<a class="sb-brand" href="#overview"><span>Jaka Putra Tikalung</span><em>QA</em></a>
+<nav class="sb-nav" aria-label="Main"><a class="tab" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 2.5 11.2h2.7V20h5.3v-5.5h3V20h5.3v-8.8h2.7z"/></svg><span data-id="Ringkasan">Overview</span></a><a class="tab" href="#experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v2h4a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4V5a1 1 0 0 1 1-1zm1 3h4V6h-4z"/></svg><span data-id="Pengalaman">Experience</span></a><a class="tab" href="#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z"/></svg><span data-id="Proyek">Projects</span><em class=new>NEW</em></a><a class="tab" href="#skills"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H10L9 22l8.5-11.5H12z"/></svg><span data-id="Keahlian">Skills</span></a><a class="tab" href="#leadership"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3.3 3.1-6 7-6s7 2.7 7 6zm15 0c0-1.7-.6-3.2-1.7-4.4.6-.1 1.1-.1 1.7-.1 2.8 0 5 1.9 5 4.5z"/></svg><span data-id="Kepemimpinan">Leadership</span></a><a class="tab" href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.5V22h16v-2.5C20 16.5 16.4 14 12 14z"/></svg><span data-id="Tentang">About</span></a></nav>
+<div class="sb-bottom">
+<div class="sb-row"><span data-id="Bahasa">Language</span><div aria-label="Language / Bahasa" class="lswitch" data-on="en" id="langSwitch" role="group">
 <span aria-hidden="true" class="thumb"></span>
 <button aria-pressed="true" data-lang="en" title="English" type="button">EN</button>
 <button aria-pressed="false" data-lang="id" title="Bahasa Indonesia" type="button">ID</button>
-</div>
-<button aria-checked="false" aria-label="Dark mode" class="tswitch" id="themeSwitch" role="switch" title="Light / Dark" type="button">
+</div></div>
+<div class="sb-row"><span data-id="Tema">Theme</span><button aria-checked="false" aria-label="Dark mode" class="tswitch" id="themeSwitch" role="switch" title="Light / Dark" type="button">
 <span class="t-ico t-sun"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span><span class="t-ico t-moon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span>
 <span aria-hidden="true" class="knob"><span class="k-sun"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span><span class="k-moon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span></span>
-</button>
-<a class="btn btn-primary nav-cta" data-id="Hubungi saya" href="#contact">Get in touch</a>
-<button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="icon-btn burger" id="menuBtn" type="button">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-</button>
+</button></div>
+<small data-id="QA Manager · Jakarta, Indonesia">QA Manager · Jakarta, Indonesia</small>
+<a class="sb-btn" href="cv/CV_Jaka_Putra.pdf" target="_blank" rel="noopener" data-id="Unduh CV">Download CV</a>
 </div>
-</div>
-<div class="mnav" hidden="" id="mnav">
-<ul><li><a class="tab" data-id="Ringkasan" href="#overview">Overview</a></li><li><a class="tab" data-id="Pengalaman" href="#experience">Experience</a></li><li><a class="tab is-new" data-id="Proyek" href="#projects">Projects</a></li><li><a class="tab" data-id="Keahlian" href="#skills">Skills</a></li><li><a class="tab" data-id="Kepemimpinan" href="#leadership">Leadership</a></li><li><a class="tab" data-id="Tentang" href="#about">About</a></li><li><a data-id="Hubungi saya" href="#contact">Get in touch</a></li></ul>
-</div>
-</nav>
+</aside>
+<div class="sb-scrim" id="scrim" hidden></div>
+<div class="app-main">
 <main id="overview" class="view">
 <header class="hero">
 <div class="wrap">
@@ -960,6 +1029,7 @@ i.s1,.legend i.s1{background:var(--pass)} i.s2,.legend i.s2{background:#D09A2E} 
 <footer class="site">
 <div class="wrap"><span>© 2026 Jaka Putra Tikalung</span><span>Jakarta, Indonesia</span></div>
 </footer>
+</div>
 <script>
 (function(){
   var root=document.documentElement;
@@ -1006,13 +1076,14 @@ i.s1,.legend i.s1{background:var(--pass)} i.s2,.legend i.s2{background:#D09A2E} 
     if(el && el!==v) el.scrollIntoView(); else if(changed || el===v) scrollTo(0,0);
   }
   addEventListener('hashchange',route); route();
-  /* mobile menu */
-  var menuBtn=document.getElementById('menuBtn'), mnav=document.getElementById('mnav');
-  function closeMenu(){ mnav.hidden=true; menuBtn.setAttribute('aria-expanded','false'); }
-  menuBtn.addEventListener('click',function(){ var open=mnav.hidden; mnav.hidden=!open; menuBtn.setAttribute('aria-expanded', String(open)); });
-  mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); });
-  addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
-  addEventListener('resize',function(){ if(innerWidth>960) closeMenu(); });
+  /* sidebar drawer (mobile) */
+  var menuBtn=document.getElementById('menuBtn'), scrim=document.getElementById('scrim'), body=document.body;
+  function setMenu(open){ body.classList.toggle('nav-open',open); scrim.hidden=!open; menuBtn.setAttribute('aria-expanded',String(open)); }
+  menuBtn.addEventListener('click',function(){ setMenu(!body.classList.contains('nav-open')); });
+  scrim.addEventListener('click',function(){ setMenu(false); });
+  document.querySelectorAll('.sb-nav a, .sb-brand').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+  addEventListener('resize',function(){ if(innerWidth>960) setMenu(false); });
   /* copy */
   document.querySelectorAll('[data-copy]').forEach(function(btn){
     btn.addEventListener('click', function(){
