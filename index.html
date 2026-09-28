@@ -564,6 +564,112 @@ footer.site{padding:10px 0 24px}
   .app-main header.hero,.app-main section.block,.app-main section.proj{padding:22px 18px}
 }
 @media (prefers-reduced-motion:reduce){.sidebar{transition:none}}
+
+/* ============ projects v2 — dashboard component language ============ */
+.app-main section.proj.pj{background:none;border:0;box-shadow:none;padding:0;margin-bottom:40px}
+.pj-subs-label{margin:26px 0 4px;font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pj-subblock{margin-top:14px;padding-left:16px;border-left:3px solid var(--line)}
+.pj-sub{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}
+.pj-subnum{flex:none;padding:3px 8px;border-radius:7px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font:700 12px var(--mono)}
+.pj-sub h3{font-size:19px;font-weight:800;margin:0 0 3px}
+.pj-sub p{margin:0;color:var(--muted);font-size:14.5px}
+@media (max-width:760px){.pj-subblock{padding-left:10px}}
+.pj-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.pj-num{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font:700 14px var(--mono)}
+.pj-head h2{font-size:26px;font-weight:800;margin:2px 0 6px}
+.pj-desc{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:80ch}
+.pj-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.pj-stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px}
+.pj-stat b{display:block;font-size:20px;font-weight:800;color:var(--ink)}
+.pj-stat span{font-size:13.5px;color:var(--muted)}
+.pj-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:14px;margin-bottom:14px;align-items:start}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 2px 10px rgba(37,42,49,.05);min-width:0}
+.pcard h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:19px;font-weight:700;margin:0 0 12px}
+.pcard .feat{margin:0 0 14px}
+.pcard .feat li{font-size:14.5px}
+.pill-list{display:flex;flex-wrap:wrap;gap:6px}
+.pill-list span{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-size:12.5px;color:var(--muted)}
+.dbadge{font-size:11.5px;padding:2px 9px;border-radius:20px;font-weight:600;letter-spacing:.02em;display:inline-block;text-transform:capitalize;white-space:nowrap}
+.dbadge.ok{background:rgba(46,158,91,.13);color:#2E9E5B}
+.dbadge.stub{background:rgba(255,151,0,.15);color:#C77A00}
+.dbadge.missing{background:rgba(217,59,59,.12);color:#D93B3B}
+.dbadge.cold{background:rgba(140,160,179,.18);color:#5F738C}
+.pcard .wf{margin-top:4px}
+/* mini dashboard frame */
+.dmock{display:grid;grid-template-columns:132px minmax(0,1fr);border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg);font-size:12px}
+.dm-side{background:linear-gradient(to bottom,var(--accent),color-mix(in srgb,var(--accent) 82%,#000));color:#fff;padding:12px 8px;display:flex;flex-direction:column;gap:1px}
+.dm-logo{display:flex;align-items:center;justify-content:center;gap:5px;font-weight:800;margin-bottom:8px}
+.dm-logo .dm-brand{color:#fff;font-size:13px}
+.dm-logo em{font-style:normal;background:#fff;color:var(--accent);border-radius:4px;padding:0 5px;font-size:10px}
+.dm-side>span{padding:4px 8px;border-radius:6px;font-weight:700;font-size:10.5px;opacity:.9;white-space:nowrap}
+.dm-side>span.on{background:#fff;color:var(--accent);opacity:1}
+.dm-upd{margin-top:auto;padding-top:8px;border-top:1px solid rgba(255,255,255,.2)}
+.dm-upd span{display:block;text-align:center;background:#fff;color:var(--accent);border-radius:6px;padding:4px;font-weight:700;font-size:10.5px}
+.dm-main{padding:12px;display:grid;gap:10px;align-content:start;min-width:0}
+.dm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.dm-stat{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 9px;color:var(--muted);font-size:10.5px;text-transform:capitalize}
+.dm-stat b{display:block;color:var(--ink);font-size:13.5px}
+.dm-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;box-shadow:0 2px 10px rgba(37,42,49,.05);min-width:0}
+.dm-card h4{margin:0 0 4px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:6px;text-transform:capitalize}
+.dm-desc{color:var(--muted);font-size:11px;margin:0 0 6px;text-transform:capitalize}
+.dm-tw{overflow-x:auto}
+.dm-t{width:100%;border-collapse:collapse;font-size:11.5px;font-variant-numeric:tabular-nums}
+.dm-t th{color:var(--muted);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;text-align:left;padding:5px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.dm-t td{padding:5px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.dm-t tr:last-child td{border-bottom:0}
+.cnt{display:inline-block;min-width:26px;text-align:center;padding:1px 7px;border-radius:20px;font-weight:700;font-size:11px}
+.cnt.g{background:rgba(46,158,91,.13);color:#2E9E5B}
+.cnt.r{background:rgba(217,59,59,.12);color:#D93B3B}
+.up{color:#2E9E5B} .mu{color:var(--muted)}
+.dm-spark{width:100%;height:70px;display:block}
+.dm-spark line{stroke:var(--line);stroke-width:1}
+.dm-spark polyline{fill:none;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke}
+.dm-spark circle{fill:var(--accent)}
+.dm-files{list-style:none;margin:0;padding:0;font:11.5px var(--mono)}
+.dm-files li{display:flex;justify-content:space-between;align-items:center;padding:5px 6px;border-radius:5px}
+.dm-files li:nth-child(odd){background:var(--bg)}
+.dm-bars{display:flex;align-items:flex-end;gap:8px;height:84px;padding:4px 2px 16px;border-bottom:1px solid var(--line)}
+.dm-bars i{position:relative;flex:1;background:var(--accent);border-radius:4px 4px 0 0;min-height:4px}
+.dm-bars i em{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-style:normal;font-size:9.5px;color:var(--muted)}
+.dm-bars.sm{height:60px;padding-bottom:4px}
+.dm-stack{display:flex;height:10px;border-radius:6px;overflow:hidden;background:var(--line);margin-top:4px}
+.dm-stack i{display:block;height:100%}
+.dm-stack .g,.dm-leg i.g{background:#2E9E5B}.dm-stack .o,.dm-leg i.o{background:#FF9700}.dm-stack .c{background:#8CA0B3}.dm-leg i.c{background:#8CA0B3}.dm-leg i.r{background:#D93B3B}
+.dm-leg{display:flex;gap:12px;flex-wrap:wrap;margin-top:7px;font-size:10.5px;color:var(--muted)}
+.dm-leg span{display:inline-flex;align-items:center;gap:5px}
+.dm-leg i{width:9px;height:9px;border-radius:50%}
+.dm-pb{display:inline-block;width:44px;height:6px;border-radius:3px;background:var(--line);margin-right:6px;vertical-align:1px;overflow:hidden}
+.dm-pb i{display:block;height:100%;background:#2E9E5B}
+.dm-search{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px;color:var(--muted)}
+.dm-issues{list-style:none;margin:0;padding:0}
+.dm-issues li{display:grid;grid-template-columns:52px minmax(0,1fr) auto auto;gap:8px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}
+.dm-issues li:first-child{border-top:0}
+.zid{font-family:var(--mono);color:var(--muted)} .zt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sdot{width:9px;height:9px;border-radius:50%} .sdot.r{background:#D93B3B} .sdot.o{background:#FF9700} .sdot.g{background:#2E9E5B}
+.dm-row{display:flex;justify-content:space-between;align-items:center}
+.dm-btn{background:var(--accent);color:var(--accent-ink);border-radius:7px;padding:4px 10px;font-weight:700;font-size:11px}
+.dm-risk>div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:5px 0}
+.dm-risk>div+div{border-top:1px solid var(--line)}
+@media (max-width:1100px){.pj-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.pj-stats{grid-template-columns:repeat(2,1fr)}.dmock{grid-template-columns:minmax(0,1fr)}.dm-side{display:none}.dm-stats{grid-template-columns:repeat(2,1fr)}.pj-head h2{font-size:22px}}
+
+/* workflow: vertical timeline */
+ol.wf,ol.wf.wf-n7,ol.wf.wf-n8{display:block!important;margin:6px 0 0;padding:0}
+ol.wf li{display:grid!important;grid-template-columns:30px 150px minmax(0,1fr);column-gap:14px;align-items:baseline;padding:0 0 18px!important;background:none!important;border:0!important;border-radius:0;position:relative}
+ol.wf li:last-child{padding-bottom:0!important}
+ol.wf li::before{grid-row:1/3;align-self:start;display:grid!important;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--surface);border:2px solid var(--accent);color:var(--accent);font:700 11px var(--mono);position:relative;z-index:1;box-sizing:border-box}
+ol.wf li:not(:last-child)::after{display:block!important;content:""!important;position:absolute;left:14px;top:30px;bottom:0;right:auto;width:2px;background:color-mix(in srgb,var(--accent) 30%,var(--line))!important}
+ol.wf li:last-child::before{background:var(--accent);color:var(--accent-ink)}
+ol.wf b{font-size:15px;padding-top:5px}
+ol.wf span{font-size:14px;color:var(--ink-2);line-height:1.55;padding-top:5px}
+@media (max-width:760px){ol.wf li{grid-template-columns:30px minmax(0,1fr)}ol.wf li span{grid-column:2;padding-top:2px}}
+.line{flex-wrap:nowrap}.line>div{min-width:0;flex:1}.line button,.line a{flex:none}
+@media (max-width:420px){.line .v{font-size:13px}}
+.shot{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 1px 2px rgba(20,30,40,.05),0 6px 18px rgba(20,30,40,.08);cursor:zoom-in}
+.shot img{display:block;width:100%;height:auto}
+.pj-grid{grid-template-columns:minmax(0,1fr)!important}
+.pj-grid .pcard-prev{order:-1}
+@media (min-width:900px){.pj-grid .feat{display:block;columns:2;column-gap:36px}.pj-grid .feat li{break-inside:avoid;margin-bottom:10px}}
 </style>
 </head>
 <body>
@@ -571,7 +677,7 @@ footer.site{padding:10px 0 24px}
 <button type="button" class="menu-fab" id="menuBtn" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 <aside class="sidebar" id="sidebar">
 <a class="sb-brand" href="#overview"><span>Jaka Putra Tikalung</span><em>QA</em></a>
-<nav class="sb-nav" aria-label="Main"><a class="tab" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 2.5 11.2h2.7V20h5.3v-5.5h3V20h5.3v-8.8h2.7z"/></svg><span data-id="Ringkasan">Overview</span></a><a class="tab" href="#experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v2h4a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4V5a1 1 0 0 1 1-1zm1 3h4V6h-4z"/></svg><span data-id="Pengalaman">Experience</span></a><a class="tab" href="#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z"/></svg><span data-id="Proyek">Projects</span><em class=new>NEW</em></a><a class="tab" href="#skills"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H10L9 22l8.5-11.5H12z"/></svg><span data-id="Keahlian">Skills</span></a><a class="tab" href="#leadership"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3.3 3.1-6 7-6s7 2.7 7 6zm15 0c0-1.7-.6-3.2-1.7-4.4.6-.1 1.1-.1 1.7-.1 2.8 0 5 1.9 5 4.5z"/></svg><span data-id="Kepemimpinan">Leadership</span></a><a class="tab" href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.5V22h16v-2.5C20 16.5 16.4 14 12 14z"/></svg><span data-id="Tentang">About</span></a></nav>
+<nav class="sb-nav" aria-label="Main"><a class="tab" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 2.5 11.2h2.7V20h5.3v-5.5h3V20h5.3v-8.8h2.7z"/></svg><span data-id="Ringkasan">Overview</span></a><a class="tab" href="#experience"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6a1 1 0 0 1 1 1v2h4a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4V5a1 1 0 0 1 1-1zm1 3h4V6h-4z"/></svg><span data-id="Pengalaman">Experience</span></a><a class="tab" href="#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z"/></svg><span data-id="Proyek">Projects</span></a><a class="tab" href="#skills"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13.5H10L9 22l8.5-11.5H12z"/></svg><span data-id="Keahlian">Skills</span></a><a class="tab" href="#leadership"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3.3 3.1-6 7-6s7 2.7 7 6zm15 0c0-1.7-.6-3.2-1.7-4.4.6-.1 1.1-.1 1.7-.1 2.8 0 5 1.9 5 4.5z"/></svg><span data-id="Kepemimpinan">Leadership</span></a><a class="tab" href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.5V22h16v-2.5C20 16.5 16.4 14 12 14z"/></svg><span data-id="Tentang">About</span></a></nav>
 <div class="sb-bottom">
 <div class="sb-row"><span data-id="Bahasa">Language</span><div aria-label="Language / Bahasa" class="lswitch" data-on="en" id="langSwitch" role="group">
 <span aria-hidden="true" class="thumb"></span>
@@ -627,7 +733,7 @@ footer.site{padding:10px 0 24px}
 <div class="stat" role="listitem"><b>4</b><span data-id="orang di tim QA yang saya pimpin">people on the QA team I lead</span></div>
 </div>
 </div>
-<section class="block"><div class="wrap"><div class="sec-head"><span class="eyebrow" data-id="Jelajahi">Explore</span><h2 data-id="Lihat lebih detail">Dig into the details</h2></div><div class="xgrid"><a class="xcard" href="#experience"><span class="xnum">01</span><h3 data-id="Pengalaman">Experience</h3><p data-id="10+ tahun di satu platform travel online, dari QA engineer hingga QA manager, lengkap dengan studi kasusnya.">10+ years at one online travel platform, from QA engineer to QA manager, plus the case studies behind the roles.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#projects"><span class="xnum">02</span><h3 data-id="Proyek">Projects</h3><p data-id="Enam alat yang saya bangun: dashboard QA, sistem test case, AI agent, framework E2E, triage komplain dan sign-off rilis.">Six tools I built: a QA dashboard, a test case system, AI agents, an E2E framework, complaint triage and release sign-off.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#skills"><span class="xnum">03</span><h3 data-id="Keahlian">Skills</h3><p data-id="Otomasi, mobile, API dan QA berbasis AI, serta area produk yang paling saya kuasai.">Automation, mobile, API and AI-assisted QA, and the product areas I test most deeply.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#leadership"><span class="xnum">04</span><h3 data-id="Kepemimpinan">Leadership</h3><p data-id="Cara saya menjalankan fungsi QA: tim, alur tiket, 11 SOP dan pelaporan.">How I run the QA function: the team, the ticket workflow, 11 SOPs and reporting.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#about"><span class="xnum">05</span><h3 data-id="Tentang">About</h3><p data-id="Latar belakang, pendidikan, bahasa dan CV satu halaman untuk diunduh.">Background, education, languages and a one-page CV to download.</p><span class="xgo" data-id="Buka →">Open →</span></a></div></div></section>
+<section class="block"><div class="wrap"><div class="sec-head"><span class="eyebrow" data-id="Jelajahi">Explore</span><h2 data-id="Lihat lebih detail">Dig into the details</h2></div><div class="xgrid"><a class="xcard" href="#experience"><span class="xnum">01</span><h3 data-id="Pengalaman">Experience</h3><p data-id="10+ tahun di satu platform travel online, dari QA engineer hingga QA manager, lengkap dengan studi kasusnya.">10+ years at one online travel platform, from QA engineer to QA manager, plus the case studies behind the roles.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#projects"><span class="xnum">02</span><h3 data-id="Proyek">Projects</h3><p data-id="Dashboard QA (test case, laporan otomasi, asistensi AI), integrasi Zendesk + Sentry, dan tracking rilis app.">The QA dashboard (test cases, automation reports, AI assistance), a Zendesk + Sentry integration, and app release tracking.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#skills"><span class="xnum">03</span><h3 data-id="Keahlian">Skills</h3><p data-id="Otomasi, mobile, API dan QA berbasis AI, serta area produk yang paling saya kuasai.">Automation, mobile, API and AI-assisted QA, and the product areas I test most deeply.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#leadership"><span class="xnum">04</span><h3 data-id="Kepemimpinan">Leadership</h3><p data-id="Cara saya menjalankan fungsi QA: tim, alur tiket, 11 SOP dan pelaporan.">How I run the QA function: the team, the ticket workflow, 11 SOPs and reporting.</p><span class="xgo" data-id="Buka →">Open →</span></a><a class="xcard" href="#about"><span class="xnum">05</span><h3 data-id="Tentang">About</h3><p data-id="Latar belakang, pendidikan, bahasa dan CV satu halaman untuk diunduh.">Background, education, languages and a one-page CV to download.</p><span class="xgo" data-id="Buka →">Open →</span></a></div></div></section>
 </main>
 <main id="experience" class="view" hidden>
 <header class="page-head"><div class="wrap"><span class="eyebrow" data-id="Pengalaman">Experience</span><h1 class="ph-title" data-id="10+ tahun, satu produk, cakupan yang terus berkembang">10+ years, one product, growing scope</h1><p class="lede" data-id="Peran, tanggung jawab dan studi kasus di baliknya.">Roles, responsibilities and the case studies behind them.</p></div></header>
@@ -640,7 +746,7 @@ footer.site{padding:10px 0 24px}
 <p class="org" data-id="Platform pemesanan travel online · Jakarta · Full-time">Online travel booking platform · Jakarta · Full-time</p>
 <ul>
 <li data-id="Memimpin tim QA beranggotakan 4 orang (3 QA engineer) dan bertanggung jawab penuh atas kualitas produk di desktop web, mobile web, Android dan iOS; menyusun strategi testing manual dan otomasi yang terintegrasi dengan CI/CD.">Lead a 4-person QA team (3 QA engineers) and own end-to-end product quality for desktop web, mobile web, Android and iOS; define manual and automation test strategy integrated into CI/CD.</li>
-<li data-id="Membangun QA berbasis AI: 35+ AI agent skill kustom (Claude, MCP) dan knowledge base terstruktur yang menjalankan E2E test, verifikasi tiket Jira dan pelaporan QA.">Built AI-assisted QA: 35+ custom AI agent skills (Claude, MCP) and a structured knowledge base that run E2E tests, Jira ticket verification and QA reporting.</li>
+<li data-id="Membangun praktik QA berbasis AI: 35+ AI agent skill kustom (Claude, MCP) dan knowledge base terstruktur yang mengotomasi E2E testing, verifikasi tiket Jira dan pelaporan QA.">Built an AI-assisted QA practice: 35+ custom AI agent skills (Claude, MCP) and a structured knowledge base that automate E2E testing, Jira ticket verification and QA reporting.</li>
 <li data-id="Mengotomasi alur pemesanan lengkap (pencarian → form pemesanan → pembayaran → verifikasi order) untuk pesawat, hotel, aktivitas, kereta dan bus dengan Playwright, WebdriverIO, Cypress dan Appium.">Automate complete booking journeys (search → booking form → payment → order verification) for flight, hotel, activity, train and bus with Playwright, WebdriverIO, Cypress and Appium.</li>
 <li data-id="Memimpin QA pembayaran (kartu 3DS/OTP, PayPal, e-wallet, voucher) dan menjalankan regression, smoke, exploratory, i18n/L10n (termasuk RTL), SSO/OAuth serta deeplink testing; bertanggung jawab atas sign-off rilis aplikasi native.">Drive payment QA (card 3DS/OTP, PayPal, e-wallets, vouchers) and run regression, smoke, exploratory, i18n/L10n (incl. RTL), SSO/OAuth and deeplink testing; own native app release sign-off.</li>
 <li data-id="Melakukan triage error production setiap hari di Sentry untuk web dan mobile, menelusuri komplain customer sampai ke akar masalah, lalu mengeskalasi ke tim engineering.">Triage production errors daily in Sentry for web and mobile, trace customer complaints to root cause and escalate to engineering.</li>
@@ -711,7 +817,7 @@ footer.site{padding:10px 0 24px}
 <div class="tags"><span class="tag">Sentry</span><span class="tag">Root cause analysis</span><span class="tag">QA KPIs</span><span class="tag">Python</span></div>
 </article>
 </div>
-<div class="more-proj"><p data-id="Lihat enam proyek mini yang saya bangun, lengkap dengan tampilan dan detail teknisnya.">See the six mini projects I built, with previews and technical detail.</p><a class="btn btn-primary" data-id="Lihat proyek →" href="#projects">Explore projects →</a></div>
+<div class="more-proj"><p data-id="Lihat proyek mini yang saya bangun, lengkap dengan tampilan dan detail teknisnya.">See the mini projects I built, with previews and technical detail.</p><a class="btn btn-primary" data-id="Lihat proyek →" href="#projects">Explore projects →</a></div>
 </div>
 </section>
 </main>
@@ -720,199 +826,60 @@ footer.site{padding:10px 0 24px}
 <div class="wrap">
 <span class="eyebrow" data-id="Proyek mini">Mini projects</span>
 <h2 data-id="Hal-hal yang saya bangun">Things I built</h2>
-<p class="lede" data-id="Enam alat internal yang saya rancang dan bangun untuk menjalankan fungsi QA modern. Setiap proyek menampilkan workflow aslinya; nama perusahaan dan URL internal disensor, dan tampilan preview memakai data contoh.">Six internal tools I designed and built to run a modern QA function. Each one shows its real workflow; company names and internal URLs are redacted, and the previews use sample data.</p>
+<p class="lede" data-id="Tiga proyek yang saya rancang dan bangun untuk menjalankan fungsi QA modern: dashboard QA (dengan manajemen test case, laporan otomasi dan asistensi AI), integrasi Zendesk + Sentry, dan tracking rilis app. Nama perusahaan dan URL diganti placeholder, dan preview memakai data contoh.">Three projects I designed and built to run a modern QA function: the QA dashboard (with test case management, automation reports and AI assistance), a Zendesk + Sentry integration, and app release tracking. Company names and URLs are replaced with placeholders, and previews use sample data.</p>
 <nav aria-label="Projects" class="p-jump">
-<a href="#proj-dashboard">QA Command Center</a>
-<a href="#proj-testcases">Test Case Management</a>
-<a href="#proj-agents">AI QA Agents</a>
-<a href="#proj-e2e">E2E Automation</a>
-<a data-id="Triage Komplain" href="#proj-triage">Complaint Triage</a>
-<a data-id="App Release Sign-off" href="#proj-release">App Release Sign-off</a>
+<a data-id="Dashboard QA" href="#proj-dashboard">QA Dashboard</a>
+<a href="#proj-triage">Zendesk + Sentry</a>
+<a data-id="Tracking Rilis App" href="#proj-release">App Release Tracking</a>
 </nav>
 </div>
 </header>
 <!-- 1 Dashboard -->
-<section class="proj" id="proj-dashboard">
-<div class="wrap proj-grid">
-<div class="proj-text">
-<span class="p-num">01</span>
-<h3>QA Command Center</h3>
-<p class="p-sum" data-id="Satu dashboard untuk seluruh tim QA: hasil E2E harian, katalog test case, pre-release app, triage komplain, performa tim dan laporan kuartalan. Diperbarui otomatis tiap 10 menit.">One dashboard for the whole QA team: daily E2E results, the test case catalog, app pre-release, complaint triage, team performance and quarterly reports. Refreshes automatically every 10 minutes.</p>
-<ul class="feat">
-<li data-id="Matriks run E2E per hari × skenario, dengan popup error dan alasan skip">E2E run matrix by day × scenario, with error and skip-reason popups</li>
-<li data-id="Pencarian full-text di seluruh test case dengan viewer bawaan">Full-text search across every test case with a built-in viewer</li>
-<li data-id="Laporan Q1–Q4: insiden, improvement, tim dan pertumbuhan test case">Q1–Q4 reports: incidents, improvements, team and test case growth</li>
-<li data-id="Login bersama (cookie HMAC, rate-limit), build publik yang membuang field internal">Shared login (HMAC cookie, rate-limited), public build that strips internal fields</li>
-<li data-id="Backup harian terenkripsi AES-256 ke dua lokasi">Encrypted AES-256 daily backup to two locations</li>
-<li data-id="18 smoke check Playwright + 25 unit test dijalankan di setiap perubahan">18 Playwright smoke checks + 25 unit tests on every change</li>
-</ul>
-<div class="tags"><span class="tag">Python</span><span class="tag">HTTP server</span><span class="tag">Jira API</span><span class="tag">Sentry API</span><span class="tag">Playwright</span><span class="tag">SVG charts</span></div>
+<section class="proj pj" id="proj-dashboard">
+<div class="pj-head"><span class="pj-num">01</span><div><h2 data-id="Dashboard QA">QA Dashboard</h2><p class="pj-desc" data-id="Satu dashboard untuk seluruh tim QA: hasil E2E harian, katalog test case, pre-release app, triage komplain, performa tim dan laporan kuartalan. Diperbarui otomatis tiap 10 menit.">One dashboard for the whole QA team: daily E2E results, the test case catalog, app pre-release, complaint triage, team performance and quarterly reports. Refreshes automatically every 10 minutes.</p></div></div>
+<div class="pj-stats"><div class="stat pj-stat"><b>12</b><span data-id="tab dashboard">dashboard tabs</span></div><div class="stat pj-stat"><b>10 min</b><span data-id="refresh otomatis">auto-refresh</span></div><div class="stat pj-stat"><b>18</b><span data-id="smoke check">smoke checks</span></div><div class="stat pj-stat"><b>25</b><span data-id="unit test">unit tests</span></div></div>
+<div class="pj-grid">
+<div class="pcard"><h3 data-id="Fitur">Features</h3><ul class="feat"><li data-id="Matriks run E2E per hari × skenario, dengan popup error dan alasan skip">E2E run matrix by day × scenario, with error and skip-reason popups</li><li data-id="Pencarian full-text di seluruh test case dengan viewer bawaan">Full-text search across every test case with a built-in viewer</li><li data-id="Laporan Q1–Q4: insiden, improvement, tim dan pertumbuhan test case">Q1–Q4 reports: incidents, improvements, team and test case growth</li><li data-id="Tracker bug Jira: bug terbuka, sedang dikerjakan dan selesai, per prioritas">Jira bug tracker: open, in-progress and resolved bugs by priority</li><li data-id="Quality Meter per platform: desktop, mobile web, Android dan iOS">Quality Meter per platform: desktop, mobile web, Android and iOS</li><li data-id="18 smoke check Playwright + 25 unit test dijalankan di setiap perubahan">18 Playwright smoke checks + 25 unit tests on every change</li></ul><div class="pill-list"><span>Python</span><span>REST APIs</span><span>Jira API</span><span>Sentry API</span><span>Playwright</span><span>Data visualization</span></div></div>
+<div class="pcard pcard-prev"><h3><span data-id="Preview">Preview</span> <span class="dbadge cold" data-id="Data contoh">Sample data</span></h3><a class="shot" href="assets/shots/overview.jpg" target="_blank" rel="noopener"><img src="assets/shots/overview.jpg" alt="QA dashboard overview tab with sample data" loading="lazy" width="1440" height="900"></a></div>
 </div>
-<figure class="mock mk-dash" aria-label="QA dashboard preview with sample data">
-<div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">QA Command Center</span></div>
-<div class="dash">
-  <aside class="dside"><div class="dlogo"><span class="bl" aria-label="brand hidden">brandname</span><em>QA</em></div><span class="on">Overview</span><span class="">Bugs</span><span class="">Test Cases</span><span class="">Automation</span><span class="">Skills</span><span class="">SOP</span><span class="">Team</span><span class="">Sentry</span><span class="">Pre-Release</span><span class="">Zendesk</span><span class="">Report</span><span class="">Quality Meter</span><div class="dupd"><small>Auto-refreshes every 10 minutes</small><span class="dbtn">Update data</span></div></aside>
-  <div class="dmain">
-    <div class="dcard"><h5>E2E Testing (Web - Production)</h5>
-      <div class="tw"><table class="mt"><thead><tr><th>Date</th><th>Success</th><th>Flaky</th><th>Failed</th><th>Skipped</th><th>Duration</th></tr></thead><tbody><tr><td>Mon</td><td class="ok">42</td><td class="fl">1</td><td class="bad">0</td><td>2</td><td>14m</td></tr><tr><td>Tue</td><td class="ok">41</td><td class="fl">2</td><td class="bad">1</td><td>1</td><td>15m</td></tr><tr><td>Wed</td><td class="ok">44</td><td class="fl">0</td><td class="bad">0</td><td>1</td><td>13m</td></tr><tr><td>Thu</td><td class="ok">43</td><td class="fl">1</td><td class="bad">0</td><td>1</td><td>14m</td></tr></tbody></table></div></div>
-    <div class="dcard"><h5>Pass Rate Trend</h5><svg class="sp" viewBox="0 0 260 56" preserveAspectRatio="none" aria-hidden="true"><path d="M4.0,56 L4.0,50.0 L40.0,36.0 L76.0,43.0 L112.0,22.0 L148.0,29.0 L184.0,15.0 L220.0,22.0 L256.0,8.0 L256.0,56 Z" class="sp-a"/><polyline points="4.0,50.0 40.0,36.0 76.0,43.0 112.0,22.0 148.0,29.0 184.0,15.0 220.0,22.0 256.0,8.0" class="sp-l"/><circle cx="256.0" cy="8.0" r="3.2" class="sp-d"/></svg></div>
-    <div class="dcard"><h5>Quality Meter</h5><div class="gzrow"><div class="gz"><div class="ring" style="--v:82"><b>82</b></div><small>Desktop</small></div><div class="gz"><div class="ring" style="--v:76"><b>76</b></div><small>Mobile web</small></div><div class="gz"><div class="ring" style="--v:71"><b>71</b></div><small>Android</small></div><div class="gz"><div class="ring" style="--v:79"><b>79</b></div><small>iOS</small></div></div></div>
-  </div>
-</div><figcaption data-id="Data contoh">Sample data</figcaption></figure>
+<div class="pj-subs-label" data-id="Di dalam dashboard">Inside the dashboard</div>
+<div class="pj-subblock" id="proj-testcases"><div class="pj-sub"><span class="pj-subnum">1.1</span><div><h3 data-id="Manajemen Test Case">Test Case Management</h3><p data-id="4,000+ test case Markdown di 40+ file fitur, dibaca manusia dan AI, tampil di tab Test Cases.">4,000+ Markdown test cases in 40+ feature files, readable by people and AI, surfaced in the Test Cases tab.</p></div></div>
+<div class="pj-grid">
+<div class="pcard"><h3 data-id="Fitur">Features</h3><ul class="feat"><li data-id="Satu file per fitur dengan prefix Case ID (misalnya PAY, AUTH, FR)">One file per feature with a Case ID prefix (for example PAY, AUTH, FR)</li><li data-id="Folder terpisah untuk skenario E2E, regression pre-release dan insiden">Separate folders for E2E scenarios, pre-release regression and incidents</li><li data-id="Tiket Jira dikonversi otomatis menjadi test case dengan format standar">Jira tickets converted automatically into test cases in a standard format</li><li data-id="Audit konsistensi katalog untuk menemukan test case yang salah kategori">Catalog consistency audits that catch miscategorised cases</li><li data-id="File skenario langsung dipakai sebagai konfigurasi suite otomasi">Scenario files double as configuration for the automation suites</li></ul><div class="pill-list"><span>Test design</span><span>Markdown</span><span>Git</span><span>Information architecture</span></div></div>
+<div class="pcard pcard-prev"><h3><span data-id="Preview">Preview</span> <span class="dbadge cold" data-id="Data contoh">Sample data</span></h3><a class="shot" href="assets/shots/testcases.jpg" target="_blank" rel="noopener"><img src="assets/shots/testcases.jpg" alt="Test Cases tab with sample data" loading="lazy" width="1440" height="900"></a></div>
 </div>
-<div class="wrap wf-wrap"><div class="wf-head"><span class="eyebrow" data-id="Workflow">Workflow</span><h4 data-id="Cara kerjanya">How it runs</h4></div><ol class="wf wf-n6"><li><b data-id="Scan">Scan</b><span data-id="Generator memindai knowledge base test case dan dua repo otomasi.">Generator scans the test case knowledge base and both automation repos.</span></li><li><b data-id="Tarik data">Pull</b><span data-id="Mengambil data Jira, Sentry dan helpdesk lewat REST API; bulan yang sudah lewat diambil dari cache.">Fetches Jira, Sentry and helpdesk data over REST APIs; finished months come from a cache.</span></li><li><b data-id="Klasifikasi">Classify</b><span data-id="Menandai tiket helpdesk dalam 3 lapis: override manual → aturan tetap → AI.">Tags helpdesk tickets in 3 tiers: manual override → fixed rules → AI.</span></li><li><b data-id="Render">Render</b><span data-id="Membuat HTML dashboard plus versi publik yang membuang field internal.">Builds the dashboard HTML plus a public build with internal fields stripped.</span></li><li><b data-id="Sajikan">Serve</b><span data-id="Disajikan ke tim dengan login bersama di http://&lt;span class=&quot;bl&quot; aria-label=&quot;brand hidden&quot;&gt;brandname&lt;/span&gt;:8787; refresh tiap 10 menit, snapshot harian jam 20:00.">Served to the team with a shared login at http://<span class="bl" aria-label="brand hidden">brandname</span>:8787; refreshes every 10 min, daily snapshot at 20:00.</span></li><li><b data-id="Verifikasi">Verify</b><span data-id="18 smoke check Playwright dan 25 unit test setiap ada perubahan; backup terenkripsi tiap malam.">18 Playwright smoke checks and 25 unit tests after every change; encrypted backup nightly.</span></li></ol></div>
+</div>
+<div class="pj-subblock" id="proj-automation"><div class="pj-sub"><span class="pj-subnum">1.2</span><div><h3 data-id="Laporan Otomasi">Automation Report</h3><p data-id="Hasil run E2E harian dan coverage otomasi di tab Automation.">Daily E2E run results and automation coverage in the Automation tab.</p></div></div>
+<div class="pj-grid">
+<div class="pcard"><h3 data-id="Fitur">Features</h3><ul class="feat"><li data-id="Hasil E2E harian per skenario × desktop/mobile, lengkap dengan durasi">Daily E2E results per scenario × desktop/mobile, with duration</li><li data-id="Status pass / flaky / skip dengan popup error dan alasan skip">Pass / flaky / skip status with error and skip-reason popups</li><li data-id="Coverage per section: test case katalog mana yang sudah punya spec otomatis">Coverage per section: which catalog cases already have an automated spec</li><li data-id="Data dari suite Playwright (web) dan Appium (app), ringkasan dikirim ke Slack">Fed by the Playwright (web) and Appium (app) suites, with a summary sent to Slack</li></ul><div class="pill-list"><span>Playwright</span><span>Appium</span><span>WebdriverIO</span><span>Coverage tracking</span><span>Slack reports</span></div></div>
+<div class="pcard pcard-prev"><h3><span data-id="Preview">Preview</span> <span class="dbadge cold" data-id="Data contoh">Sample data</span></h3><a class="shot" href="assets/shots/automation.jpg" target="_blank" rel="noopener"><img src="assets/shots/automation.jpg" alt="Automation tab with sample data" loading="lazy" width="1440" height="900"></a></div>
+</div>
+</div>
+<div class="pj-subblock" id="proj-agents"><div class="pj-sub"><span class="pj-subnum">1.3</span><div><h3 data-id="Asistensi QA dengan AI">AI QA Assistance</h3><p data-id="35+ agent skill yang memverifikasi tiket Jira; performa dan coverage-nya dipantau di tab Team.">35+ agent skills that verify Jira tickets; their performance and coverage tracked in the Team tab.</p></div></div>
+<div class="pj-grid">
+<div class="pcard"><h3 data-id="Fitur">Features</h3><ul class="feat"><li data-id="Deteksi platform dari komponen tiket: desktop, mobile web, Android atau iOS">Platform detection from ticket components: desktop, mobile web, Android or iOS</li><li data-id="Status yang tegas: PASS, FAIL, NEED MANUAL atau NO TASK, tanpa status setengah">Strict verdicts: PASS, FAIL, NEED MANUAL or NO TASK, never partial</li><li data-id="Aturan bukti: klaim SSR, timing dan metrik dibuktikan dengan data teks, bukan screenshot">Evidence rules: SSR, timing and metric claims proven with text evidence, not screenshots</li><li data-id="Batas langkah per tiket agar penggunaan AI tetap efisien">Per-ticket step budget to keep AI usage cost-efficient</li><li data-id="Skill terpisah untuk insiden, laporan mingguan dan triage Sentry harian">Separate skills for incidents, weekly reports and daily Sentry triage</li></ul><div class="pill-list"><span>LLM agents</span><span>Model Context Protocol</span><span>Jira REST API</span><span>Prompt engineering</span></div></div>
+<div class="pcard pcard-prev"><h3><span data-id="Preview">Preview</span> <span class="dbadge cold" data-id="Data contoh">Sample data</span></h3><a class="shot" href="assets/shots/team.jpg" target="_blank" rel="noopener"><img src="assets/shots/team.jpg" alt="QA Team tab with sample data" loading="lazy" width="1440" height="900"></a></div>
+</div>
+</div>
+<div class="pcard"><h3><span data-id="Workflow">Workflow</span> · <span data-id="Cara kerjanya">How it runs</span></h3><ol class="wf wf-n6"><li><b data-id="Scan">Scan</b><span data-id="Generator memindai knowledge base test case dan dua repo otomasi.">Generator scans the test case knowledge base and both automation repos.</span></li><li><b data-id="Tarik data">Pull</b><span data-id="Mengambil data Jira, Sentry dan helpdesk lewat REST API; data bulan sebelumnya di-cache.">Pulls Jira, Sentry and helpdesk data over REST APIs; past months are cached.</span></li><li><b data-id="Klasifikasi">Classify</b><span data-id="Menandai tiket helpdesk dalam 3 lapis: override manual → aturan tetap → AI.">Tags helpdesk tickets in 3 tiers: manual override → fixed rules → AI.</span></li><li><b data-id="Render">Render</b><span data-id="Menyusun halaman dan grafik dashboard dari data yang terkumpul.">Builds the dashboard pages and charts from the collected data.</span></li><li><b data-id="Sajikan">Serve</b><span data-id="Di-host internal untuk tim dengan login; data diperbarui otomatis tiap 10 menit.">Hosted internally for the team behind a login; data refreshes automatically every 10 minutes.</span></li><li><b data-id="Verifikasi">Verify</b><span data-id="18 smoke check Playwright dan 25 unit test dijalankan setiap ada perubahan.">18 Playwright smoke checks and 25 unit tests run after every change.</span></li></ol></div>
 </section>
-<!-- 2 Test cases -->
-<section class="proj alt" id="proj-testcases">
-<div class="wrap proj-grid rev">
-<div class="proj-text">
-<span class="p-num">02</span>
-<h3>Test Case Management</h3>
-<p class="p-sum" data-id="Sistem manajemen test case berbasis Markdown yang dirancang agar bisa dibaca manusia maupun AI: 4.000+ test case di 40+ file fitur, satu indeks, dan ID yang konsisten.">A Markdown-based test case management system designed to be read by people and AI alike: 4,000+ cases in 40+ feature files, one index, and consistent IDs.</p>
-<ul class="feat">
-<li data-id="Satu file per fitur dengan prefix Case ID (misalnya PAY, AUTH, FR)">One file per feature with a Case ID prefix (for example PAY, AUTH, FR)</li>
-<li data-id="Folder terpisah untuk skenario E2E, regression pre-release dan insiden">Separate folders for E2E scenarios, pre-release regression and incidents</li>
-<li data-id="Tiket Jira dikonversi otomatis menjadi test case dengan format standar">Jira tickets converted automatically into test cases in a standard format</li>
-<li data-id="Audit konsistensi katalog untuk menemukan test case yang salah kategori">Catalog consistency audits that catch miscategorised cases</li>
-<li data-id="File skenario langsung dipakai sebagai konfigurasi suite otomasi">Scenario files double as configuration for the automation suites</li>
-</ul>
-<div class="tags"><span class="tag">Test design</span><span class="tag">Markdown</span><span class="tag">Git</span><span class="tag">Information architecture</span></div>
+<section class="proj pj" id="proj-triage">
+<div class="pj-head"><span class="pj-num">02</span><div><h2 data-id="Integrasi Zendesk + Sentry">Zendesk + Sentry Integration</h2><p class="pj-desc" data-id="Pipeline yang menghubungkan tiket helpdesk dengan jejak klik customer dan error production, lalu mengklasifikasikan apakah itu bug atau bukan. Seluruhnya read-only.">A pipeline that links each helpdesk ticket to the customer's click trail and production errors, then classifies whether it is a real bug. Fully read-only.</p></div></div>
+<div class="pj-stats"><div class="stat pj-stat"><b>3</b><span data-id="sumber data">data sources</span></div><div class="stat pj-stat"><b>4</b><span data-id="hasil Sentry">Sentry outcomes</span></div><div class="stat pj-stat"><b>3-tier</b><span data-id="klasifikasi">classification</span></div><div class="stat pj-stat"><b>Read-only</b><span data-id="sejak awal">by design</span></div></div>
+<div class="pj-grid">
+<div class="pcard"><h3 data-id="Fitur">Features</h3><ul class="feat"><li data-id="Tiket → ID customer → customer journey → pencarian error di Sentry">Ticket → customer ID → customer journey → Sentry error search</li><li data-id="Hasil pencarian Sentry: strong match, weak match, tidak ada error, atau gagal">Sentry outcome: strong match, weak match, no error, or search failed</li><li data-id="Klasifikasi 3 lapis: override manual → aturan deterministik → AI">3-tier classification: manual override → deterministic rules → AI</li><li data-id="Tiket yang terbukti bug otomatis dikirim ke channel Slack QA">Confirmed bugs pushed automatically to the QA Slack channel</li></ul><div class="pill-list"><span>Zendesk API</span><span>Sentry API</span><span>LLM classification</span><span>Root cause analysis</span></div></div>
+<div class="pcard pcard-prev"><h3><span data-id="Preview">Preview</span> <span class="dbadge cold" data-id="Data contoh">Sample data</span></h3><a class="shot" href="assets/shots/zendesk.jpg" target="_blank" rel="noopener"><img src="assets/shots/zendesk.jpg" alt="Zendesk tab with sample data" loading="lazy" width="1440" height="900"></a></div>
 </div>
-<figure class="mock" aria-label="Test case management preview with sample data">
-<div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">Test Cases</span></div>
-<div class="mock-body">
-  <div class="tcg"><div><small>Test Case Growth</small><b>1,284</b><span class="ok">+11 this week</span></div><svg class="sp sp-w" viewBox="0 0 260 56" preserveAspectRatio="none" aria-hidden="true"><path d="M4.0,56 L4.0,50.0 L40.0,42.3 L76.0,37.2 L112.0,30.0 L148.0,24.1 L184.0,16.7 L220.0,10.8 L256.0,8.0 L256.0,56 Z" class="sp-a"/><polyline points="4.0,50.0 40.0,42.3 76.0,37.2 112.0,30.0 148.0,24.1 184.0,16.7 220.0,10.8 256.0,8.0" class="sp-l"/><circle cx="256.0" cy="8.0" r="3.2" class="sp-d"/></svg></div>
-  <h5 class="mh">Growth by Section — This Week vs Last Week</h5>
-  <div class="tw"><table class="mt"><thead><tr><th>Section</th><th>This week</th><th>Last week</th><th>Δ</th></tr></thead><tbody><tr><td>Payment</td><td>164</td><td>158</td><td class="ok">+6</td></tr><tr><td>Flight Result</td><td>211</td><td>207</td><td class="ok">+4</td></tr><tr><td>Order Detail</td><td>132</td><td>131</td><td class="ok">+1</td></tr><tr><td>Hotel Detail</td><td>96</td><td>96</td><td class="mut">0</td></tr></tbody></table></div>
-  <div class="twocol">
-    <div><h5 class="mh">🕒 Recently Updated</h5><ul class="chips"><li>Payment.md</li><li>Flight-Add-ons.md</li><li>Auth.md</li></ul></div>
-    <div><h5 class="mh">🗄️ Stale</h5><ul class="chips stale"><li>Careers.md</li><li>Inbox.md</li></ul></div>
-  </div>
-</div><figcaption data-id="Data contoh">Sample data</figcaption></figure>
-</div>
-<div class="wrap wf-wrap"><div class="wf-head"><span class="eyebrow" data-id="Workflow">Workflow</span><h4 data-id="Dari tiket ke katalog">From ticket to catalog</h4></div><ol class="wf wf-n6"><li><b data-id="Kategorikan">Categorise</b><span data-id="Baca tiket Jira dan pilih satu file katalog yang sesuai isinya.">Read the Jira ticket and pick the one catalog file that matches its content.</span></li><li><b data-id="Cek duplikat">De-duplicate</b><span data-id="Cari key Jira di seluruh katalog; case yang sudah ada diperbarui, tidak diduplikasi.">Search the Jira key across the catalog; existing cases are updated, never duplicated.</span></li><li><b data-id="Tambahkan">Append</b><span data-id="Tambahkan case dengan Case ID berikutnya dari prefix file, misalnya PAY-0xx.">Add cases with the next Case ID from the file prefix, e.g. PAY-0xx.</span></li><li><b data-id="Tag platform">Tag platform</b><span data-id="Beri tag (APP), (MOBILE WEB) atau (DESKTOP) hanya jika tiket membatasi platform.">Tag (APP), (MOBILE WEB) or (DESKTOP) only when the ticket scopes a platform.</span></li><li><b data-id="Daftarkan">Register</b><span data-id="Kategori baru dibuatkan file dan prefix di indeks; jumlah case tidak pernah dicatat manual.">A new category gets its own file and prefix in the index; counts are never stored by hand.</span></li><li><b data-id="Audit">Audit</b><span data-id="Audit konsistensi berkala menemukan case yang nyasar atau salah kategori.">Periodic consistency audit finds stray or miscategorised cases.</span></li></ol></div>
+<div class="pcard"><h3><span data-id="Workflow">Workflow</span> · <span data-id="Alur investigasi">Investigation path</span></h3><ol class="wf wf-n6"><li><b data-id="Tiket">Ticket</b><span data-id="Ambil tiket lewat REST API helpdesk, read-only; ambil ID customer dari pesan.">Fetch the ticket through the helpdesk REST API, read-only; take the customer ID from the message.</span></li><li><b data-id="Cadangan">Fallback</b><span data-id="Tidak ada ID customer? Cari lewat kode booking di sistem order.">No customer ID? Look it up from the booking code in the order system.</span></li><li><b data-id="Journey">Journey</b><span data-id="Buka dashboard customer journey untuk ID itu dan cek rentang tanggalnya.">Open the customer-journey dashboard for that ID and check the date range.</span></li><li><b data-id="Bandingkan">Compare</b><span data-id="Baca jejak klik customer dan bandingkan dengan keluhannya.">Read the click-by-click journey against what the customer reported.</span></li><li><b data-id="Sentry">Sentry</b><span data-id="Cari berdasarkan kode booking, lalu ID customer: strong match, weak match, no error atau gagal.">Search by booking code, then customer ID: strong match, weak match, no error or failed.</span></li><li><b data-id="Jawab">Answer</b><span data-id="Rentang waktu, hasil Sentry dan kesimpulan; bug yang terbukti dikirim ke channel Slack QA.">Timeline, Sentry result and conclusion; confirmed bugs go to the QA Slack channel.</span></li></ol></div>
 </section>
-<!-- 3 AI agents -->
-<section class="proj" id="proj-agents">
-<div class="wrap proj-grid">
-<div class="proj-text">
-<span class="p-num">03</span>
-<h3>AI QA Agents</h3>
-<p class="p-sum" data-id="35+ agent skill yang membuat AI bisa menguji tiket Jira sendiri: membaca tiket, menentukan platform, menjalankan test, mengumpulkan bukti, lalu memposting hasil QA yang terstruktur.">35+ agent skills that let AI test Jira tickets on its own: read the ticket, pick the platform, run the tests, collect evidence, and post a structured QA result.</p>
-<ul class="feat">
-<li data-id="Deteksi platform dari komponen tiket: desktop, mobile web, Android atau iOS">Platform detection from ticket components: desktop, mobile web, Android or iOS</li>
-<li data-id="Status yang tegas: PASS, FAIL, NEED MANUAL atau NO TASK, tanpa status setengah">Strict verdicts: PASS, FAIL, NEED MANUAL or NO TASK, never partial</li>
-<li data-id="Aturan bukti: klaim SSR, timing dan metrik dibuktikan dengan data teks, bukan screenshot">Evidence rules: SSR, timing and metric claims proven with text evidence, not screenshots</li>
-<li data-id="Batas jumlah langkah per tiket agar biaya AI tetap terkendali">Per-ticket call budget to keep AI cost under control</li>
-<li data-id="Skill terpisah untuk insiden, laporan mingguan dan triage Sentry harian">Separate skills for incidents, weekly reports and daily Sentry triage</li>
-</ul>
-<div class="tags"><span class="tag">LLM agents</span><span class="tag">Model Context Protocol</span><span class="tag">Jira REST API</span><span class="tag">Prompt engineering</span></div>
+<section class="proj pj" id="proj-release">
+<div class="pj-head"><span class="pj-num">03</span><div><h2 data-id="Tracking Rilis App">App Release Tracking</h2><p class="pj-desc" data-id="Tracking dan sign-off rilis aplikasi Android dan iOS yang saya susun: SOP, checklist regression terstruktur, dan log pre-release di dashboard.">Android and iOS release tracking and sign-off that I designed: an SOP, a structured regression checklist, and a pre-release log in the dashboard.</p></div></div>
+<div class="pj-stats"><div class="stat pj-stat"><b>2</b><span data-id="platform">platforms</span></div><div class="stat pj-stat"><b>2</b><span data-id="tingkat device">device tiers</span></div><div class="stat pj-stat"><b>2</b><span data-id="jenis bayar per alur">payment types per flow</span></div><div class="stat pj-stat"><b>7</b><span data-id="langkah checklist">checklist steps</span></div></div>
+<div class="pj-grid">
+<div class="pcard"><h3 data-id="Fitur">Features</h3><ul class="feat"><li data-id="Checklist dijalankan terpisah untuk mobile web dan aplikasi native">Checklist run separately for mobile web and the native app</li><li data-id="Cakupan device low-end (RAM 2–4GB, OS lama) dan high-end (flagship, OS terbaru)">Low-end (2–4GB RAM, older OS) and high-end (flagship, latest OS) device coverage</li><li data-id="Otomasi di emulator untuk alur inti, manual untuk fitur baru">Automation on emulators for core flows, manual for new features</li><li data-id="Pembayaran diuji dua kali: kartu kredit dan non-kartu, plus voucher dan ganti mata uang">Payment tested twice, card and non-card, plus vouchers and currency change</li><li data-id="Log build baru, yang perlu dites, dan riwayat sign-off">Log of new builds, builds needing testing, and sign-off history</li></ul><div class="pill-list"><span>Release management</span><span>Android</span><span>iOS</span><span>Regression</span><span>SOP</span></div></div>
+<div class="pcard pcard-prev"><h3><span data-id="Preview">Preview</span> <span class="dbadge cold" data-id="Data contoh">Sample data</span></h3><a class="shot" href="assets/shots/prerelease.jpg" target="_blank" rel="noopener"><img src="assets/shots/prerelease.jpg" alt="Pre-Release App tab with sample data" loading="lazy" width="1440" height="900"></a></div>
 </div>
-<figure class="mock term" aria-label="Agent run and bot assist coverage with sample data">
-<div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">agent · ticket QA</span></div>
-<pre class="log"><span class="c">$</span> test ticket PROJ-1234
-<span class="d">›</span> gate: not commented yet  <span class="ok">✓</span>   CR-APPROVED <span class="ok">✓</span>
-<span class="d">›</span> components: Web  → desktop + mobile
-<span class="d">›</span> TC1 search results sorted   <span class="ok">PASS</span>
-<span class="d">›</span> TC2 filter by airline        <span class="ok">PASS</span>
-<span class="d">›</span> TC3 empty state copy         <span class="bad">FAIL</span>
-<span class="d">›</span> TC4 CLS on result load       <span class="ok">PASS</span>
-<span class="d">›</span> posted QA Result → Jira ✓  label: AI-Checked</pre>
-<div class="bac"><h5>QA Assistance — Bot Assist Coverage</h5>
-  <div class="stack"><i class="s1" style="width:64%"></i><i class="s2" style="width:24%"></i><i class="s3" style="width:12%"></i></div>
-  <div class="legend"><span><i class="s1"></i>Full 64%</span><span><i class="s2"></i>Partial 24%</span><span><i class="s3"></i>None 12%</span></div>
-</div><figcaption data-id="Data contoh">Sample data</figcaption></figure>
-</div>
-<div class="wrap wf-wrap"><div class="wf-head"><span class="eyebrow" data-id="Workflow">Workflow</span><h4 data-id="Alur per tiket">Ticket loop</h4></div><ol class="wf wf-n9"><li><b data-id="Ambil">Pull</b><span data-id="Ambil tiket berikutnya dari filter QA di Jira.">Take the next ticket from the Jira QA filter.</span></li><li><b data-id="Syarat 1">Gate 1</b><span data-id="Lewati jika bot sudah memposting QA Result.">Skip if the bot already posted a QA Result.</span></li><li><b data-id="Syarat 2">Gate 2</b><span data-id="Lanjut hanya jika label CR-APPROVED sudah ada.">Continue only when the CR-APPROVED label is set.</span></li><li><b data-id="Baca">Read</b><span data-id="Baca tiket dan AC; tentukan platform dari Components (Web = desktop + mobile).">Read the ticket and AC; detect platform from Components (Web = desktop + mobile).</span></li><li><b data-id="Eksekusi">Execute</b><span data-id="Jalankan setiap test case developer dan ambil buktinya.">Run every developer test case and capture evidence.</span></li><li><b data-id="Status">Verdict</b><span data-id="PASS, FAIL, NEED MANUAL atau NO TASK, tidak ada status setengah.">PASS, FAIL, NEED MANUAL or NO TASK, never partial.</span></li><li><b data-id="Posting">Post</b><span data-id="Cek format komentar, lalu posting QA Result ke Jira.">Format gate on the comment, then post the QA Result to Jira.</span></li><li><b data-id="Katalog">Catalog</b><span data-id="Konversi dan tambahkan case ke katalog test case.">Convert and append the cases to the test case catalog.</span></li><li><b data-id="Review manusia">Human review</b><span data-id="Tim QA mengecek langkah bot dan menentukan status akhir.">QA team checks the bot’s steps and sets the final status.</span></li></ol></div>
-</section>
-<!-- 4 E2E -->
-<section class="proj alt" id="proj-e2e">
-<div class="wrap proj-grid rev">
-<div class="proj-text">
-<span class="p-num">04</span>
-<h3>E2E Automation Framework</h3>
-<p class="p-sum" data-id="Framework Playwright data-driven yang menguji lima lini produk dari pencarian sampai detail order, di desktop dan mobile, berjalan otomatis setiap hari.">A data-driven Playwright framework that tests five product lines from search to order detail, on desktop and mobile, running automatically every day.</p>
-<ul class="feat">
-<li data-id="Pesawat, hotel, aktivitas, kereta dan bus dalam satu framework">Flight, hotel, activity, train and bus in one framework</li>
-<li data-id="Skenario dibaca dari file Markdown, jadi QA non-coder bisa mengubah test">Scenarios read from Markdown files, so non-coders can change tests</li>
-<li data-id="Spec desktop dan mobile terpisah untuk layout yang berbeda">Separate desktop and mobile specs for different layouts</li>
-<li data-id="Pembayaran kartu 3DS sampai verifikasi detail order">Card payment with 3DS through to order detail verification</li>
-<li data-id="Otomasi aplikasi native Android dan iOS dengan Appium dan WebdriverIO">Native Android and iOS automation with Appium and WebdriverIO</li>
-</ul>
-<div class="tags"><span class="tag">Playwright</span><span class="tag">JavaScript</span><span class="tag">Appium</span><span class="tag">WebdriverIO</span><span class="tag">Data-driven testing</span></div>
-</div>
-<figure class="mock" aria-label="Automation coverage preview with sample data">
-<div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">Automation</span></div>
-<div class="mock-body">
-  <h5 class="mh">Web Case Coverage</h5>
-  <div class="tw"><table class="mt"><thead><tr><th>Section</th><th>desktop.spec.js</th><th>mobile.spec.js</th><th>Case Coverage</th></tr></thead><tbody><tr><td>Payment</td><td class="ok">✓</td><td class="ok">✓</td><td><span class="pbar"><i style="width:68%"></i></span>68%</td></tr><tr><td>Flight Search</td><td class="ok">✓</td><td class="ok">✓</td><td><span class="pbar"><i style="width:74%"></i></span>74%</td></tr><tr><td>Hotel Detail</td><td class="ok">✓</td><td class="mut">–</td><td><span class="pbar"><i style="width:41%"></i></span>41%</td></tr><tr><td>Order Detail</td><td class="ok">✓</td><td class="ok">✓</td><td><span class="pbar"><i style="width:55%"></i></span>55%</td></tr></tbody></table></div>
-  <h5 class="mh">Flaky Test Leaderboard</h5>
-  <div class="tw"><table class="mt"><thead><tr><th>Scenario — Platform</th><th>Flaky runs</th></tr></thead><tbody><tr><td>e2e-hotel — mobile</td><td class="fl">3</td></tr><tr><td>transport-bus — desktop</td><td class="fl">2</td></tr><tr><td>e2e-flight — mobile</td><td class="fl">1</td></tr></tbody></table></div>
-</div><figcaption data-id="Data contoh">Sample data</figcaption></figure>
-</div>
-<div class="wrap wf-wrap"><div class="wf-head"><span class="eyebrow" data-id="Workflow">Workflow</span><h4 data-id="Skenario booking pesawat">Flight booking scenario</h4></div><ol class="wf wf-n6"><li><b data-id="Cari">Search</b><span data-id="Buka new.&lt;span class=&quot;bl&quot; aria-label=&quot;brand hidden&quot;&gt;brandname&lt;/span&gt;.com/en/flight; atur tipe perjalanan, penumpang, kabin, rute CGK → DPS dan tanggal.">Open new.<span class="bl" aria-label="brand hidden">brandname</span>.com/en/flight; set trip type, passengers, cabin, route CGK → DPS and date.</span></li><li><b data-id="Pilih">Select</b><span data-id="Filter maskapai, pilih hasil pertama dan fare-nya; catat harganya.">Filter by airline, pick the first result and a fare; record the price.</span></li><li><b data-id="Isi form">Book</b><span data-id="Isi data penumpang dan kontak, tambah bagasi berbayar terkecil, konfirmasi.">Fill passenger and contact details, add the smallest paid baggage, confirm.</span></li><li><b data-id="Add-on">Add-ons</b><span data-id="Tolak proteksi perjalanan; lewati kursi dan makanan.">Decline travel protection; skip seats and meals.</span></li><li><b data-id="Bayar">Pay</b><span data-id="Catat kode booking, bayar dengan kartu test dan lewati OTP 3DS.">Record the booking code, pay with a test card and pass 3DS OTP.</span></li><li><b data-id="Verifikasi">Verify</b><span data-id="Order berstatus Payment Success; produk, tanggal, penumpang dan harga cocok dengan yang dicatat.">Order shows Payment Success; product, dates, passengers and price match what was recorded.</span></li></ol></div>
-</section>
-<!-- 5 Triage -->
-<section class="proj" id="proj-triage">
-<div class="wrap proj-grid">
-<div class="proj-text">
-<span class="p-num">05</span>
-<h3 data-id="Triage Komplain Customer">Customer Complaint Triage</h3>
-<p class="p-sum" data-id="Pipeline yang menghubungkan tiket helpdesk dengan jejak klik customer dan error production, lalu mengklasifikasikan apakah itu bug atau bukan. Seluruhnya read-only.">A pipeline that links each helpdesk ticket to the customer's click trail and production errors, then classifies whether it is a real bug. Fully read-only.</p>
-<ul class="feat">
-<li data-id="Tiket → ID customer → customer journey → pencarian error di Sentry">Ticket → customer ID → customer journey → Sentry error search</li>
-<li data-id="Hasil pencarian Sentry: strong match, weak match, tidak ada error, atau gagal">Sentry outcome: strong match, weak match, no error, or search failed</li>
-<li data-id="Klasifikasi 3 lapis: override manual → aturan deterministik → AI">3-tier classification: manual override → deterministic rules → AI</li>
-<li data-id="Tiket yang terbukti bug otomatis dikirim ke channel Slack QA">Confirmed bugs pushed automatically to the QA Slack channel</li>
-</ul>
-<div class="tags"><span class="tag">Zendesk API</span><span class="tag">Sentry API</span><span class="tag">LLM classification</span><span class="tag">Root cause analysis</span></div>
-</div>
-<figure class="mock" aria-label="Helpdesk potential issues preview with sample data">
-<div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">Zendesk — Potential Issues</span></div>
-<div class="mock-body">
-  <div class="srch">⌕ <span>Search by ticket ID…</span></div>
-  <div class="zcat"><div class="zh"><b>Add-ons</b><span class="chip bad">2 issues</span></div>
-    <div class="zr"><span class="zid">#10244</span><span>Can't add baggage after payment page</span><span class="dot d-strong" title="Sentry: strong match"></span><span class="chip bad">ISSUE</span></div>
-    <div class="zr"><span class="zid">#10261</span><span>Seat map not loading on app</span><span class="dot d-weak" title="Sentry: weak match"></span><span class="chip bad">ISSUE</span></div>
-  </div>
-  <div class="zcat"><div class="zh"><b>Refund Reverse</b><span class="chip info">expected</span></div>
-    <div class="zr"><span class="zid">#10231</span><span>Refund went to voucher, want cash</span><span class="dot d-none" title="Sentry: no error"></span><span class="chip info">NOT ISSUE</span></div>
-  </div>
-  <div class="legend"><span><i class="d-strong"></i>Sentry strong</span><span><i class="d-weak"></i>weak</span><span><i class="d-none"></i>no error</span></div>
-</div><figcaption data-id="Data contoh">Sample data</figcaption></figure>
-</div>
-<div class="wrap wf-wrap"><div class="wf-head"><span class="eyebrow" data-id="Workflow">Workflow</span><h4 data-id="Alur investigasi">Investigation path</h4></div><ol class="wf wf-n6"><li><b data-id="Tiket">Ticket</b><span data-id="Ambil tiket lewat REST API helpdesk, read-only; ambil ID customer dari pesan.">Fetch the ticket through the helpdesk REST API, read-only; take the customer ID from the message.</span></li><li><b data-id="Cadangan">Fallback</b><span data-id="Tidak ada ID? Kode booking → data order di book.&lt;span class=&quot;bl&quot; aria-label=&quot;brand hidden&quot;&gt;brandname&lt;/span&gt;.com, atau cari di CS portal pakai email atau nama.">No ID? Booking code → order record on book.<span class="bl" aria-label="brand hidden">brandname</span>.com, or search the CS portal by email or name.</span></li><li><b data-id="Journey">Journey</b><span data-id="Buka dashboard customer journey untuk ID itu dan cek rentang tanggalnya.">Open the customer-journey dashboard for that ID and check the date range.</span></li><li><b data-id="Bandingkan">Compare</b><span data-id="Baca jejak klik customer dan bandingkan dengan keluhannya.">Read the click-by-click journey against what the customer reported.</span></li><li><b data-id="Sentry">Sentry</b><span data-id="Cari berdasarkan kode booking, lalu ID customer: strong match, weak match, no error atau gagal.">Search by booking code, then customer ID: strong match, weak match, no error or failed.</span></li><li><b data-id="Jawab">Answer</b><span data-id="Rentang waktu, hasil Sentry dan kesimpulan; bug yang terbukti dikirim ke channel Slack QA.">Timeline, Sentry result and conclusion; confirmed bugs go to the QA Slack channel.</span></li></ol></div>
-</section>
-<!-- 6 Release -->
-<section class="proj alt" id="proj-release">
-<div class="wrap proj-grid rev">
-<div class="proj-text">
-<span class="p-num">06</span>
-<h3>App Release Sign-off</h3>
-<p class="p-sum" data-id="Proses sign-off rilis aplikasi Android dan iOS yang saya susun: SOP, checklist regression terstruktur, dan log pre-release di dashboard.">The Android and iOS release sign-off process I designed: an SOP, a structured regression checklist, and a pre-release log in the dashboard.</p>
-<ul class="feat">
-<li data-id="Checklist dijalankan terpisah untuk mobile web dan aplikasi native">Checklist run separately for mobile web and the native app</li>
-<li data-id="Cakupan device low-end (RAM 2–4GB, OS lama) dan high-end (flagship, OS terbaru)">Low-end (2–4GB RAM, older OS) and high-end (flagship, latest OS) device coverage</li>
-<li data-id="Otomasi di emulator untuk alur inti, manual untuk fitur baru">Automation on emulators for core flows, manual for new features</li>
-<li data-id="Pembayaran diuji dua kali: kartu kredit dan non-kartu, plus voucher dan ganti mata uang">Payment tested twice, card and non-card, plus vouchers and currency change</li>
-<li data-id="Log build baru, yang perlu dites, dan riwayat sign-off">Log of new builds, builds needing testing, and sign-off history</li>
-</ul>
-<div class="tags"><span class="tag">Release management</span><span class="tag">Android</span><span class="tag">iOS</span><span class="tag">Regression</span><span class="tag">SOP</span></div>
-</div>
-<figure class="mock" aria-label="Pre-release app log preview with sample data">
-<div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">Pre-Release App</span></div>
-<div class="mock-body">
-  <div class="prtop"><span class="mut">Newest release first.</span><span class="dbtn sm">+ Add New Release</span></div>
-  <h5 class="mh">🆕 New / Needs Testing</h5>
-  <div class="rel"><div class="rel-h"><b>v5.12.0</b><span class="chip info">Android</span><span class="chip info">iOS</span><span class="chip warn">Needs testing</span></div>
-    <ul class="ck"><li class="y">Fix: baggage price after currency change</li><li class="y">Feature: saved travelers on booking form</li><li>Fix: deeplink to order detail</li></ul></div>
-  <div class="twocol">
-    <div><h5 class="mh">Releases This Year</h5><div class="vbars"><i style="height:50%" title="2"></i><i style="height:75%" title="3"></i><i style="height:50%" title="2"></i><i style="height:100%" title="4"></i><i style="height:75%" title="3"></i><i style="height:75%" title="3"></i><i style="height:100%" title="4"></i><i style="height:50%" title="2"></i><i style="height:75%" title="3"></i></div></div>
-    <div><h5 class="mh">📜 History</h5><ul class="hist"><li><b>v5.11.2</b><span class="chip pass">Done Test</span></li><li><b>v5.11.0</b><span class="chip pass">Done Test</span></li></ul></div>
-  </div>
-</div><figcaption data-id="Data contoh">Sample data</figcaption></figure>
-</div>
-<div class="wrap wf-wrap"><div class="wf-head"><span class="eyebrow" data-id="Workflow">Workflow</span><h4 data-id="Checklist rilis">Release checklist</h4></div><ol class="wf wf-n7"><li><b data-id="Install">Install</b><span data-id="Build Android dari app distribution; build iOS di simulator.">Android build from app distribution; iOS build on the simulator.</span></li><li><b data-id="Otomasi">Automate</b><span data-id="Jalankan suite otomasi alur inti di emulator Android dan iOS.">Run the automated core-flow suites on Android and iOS emulators.</span></li><li><b data-id="Device">Devices</b><span data-id="Low-end (RAM 2–4 GB, OS lama) dan high-end (flagship, OS terbaru).">Low-end (2–4 GB RAM, older OS) and high-end (flagship, latest OS).</span></li><li><b data-id="Pesawat">Flight</b><span data-id="Booking sampai order list dengan add-on; bayar kartu dan non-kartu; voucher, mata uang, sort dan filter.">Book to order list with add-ons; pay by card and non-card; voucher, currency, sort and filter.</span></li><li><b data-id="Hotel">Hotel</b><span data-id="Alur yang sama untuk hotel, plus hasil pencarian dan peta.">Same flow for hotels, plus search results and the map.</span></li><li><b data-id="Akun">Account</b><span data-id="Login sosial dan member, profil, password dan bottom sheet; navigasi webview.">Social and member login, profile, password and bottom sheets; webview navigation.</span></li><li><b data-id="Sign-off">Sign-off</b><span data-id="Ulangi di mobile web, lalu catat hasilnya di tab pre-release dashboard.">Repeat on mobile web, then log the result in the dashboard’s pre-release tab.</span></li></ol></div>
+<div class="pcard"><h3><span data-id="Workflow">Workflow</span> · <span data-id="Checklist rilis">Release checklist</span></h3><ol class="wf wf-n7"><li><b data-id="Install">Install</b><span data-id="Build Android dari app distribution; build iOS di simulator.">Android build from app distribution; iOS build on the simulator.</span></li><li><b data-id="Otomasi">Automate</b><span data-id="Jalankan suite otomasi alur inti di emulator Android dan iOS.">Run the automated core-flow suites on Android and iOS emulators.</span></li><li><b data-id="Device">Devices</b><span data-id="Low-end (RAM 2–4 GB, OS lama) dan high-end (flagship, OS terbaru).">Low-end (2–4 GB RAM, older OS) and high-end (flagship, latest OS).</span></li><li><b data-id="Pesawat">Flight</b><span data-id="Booking sampai order list dengan add-on; bayar kartu dan non-kartu; voucher, mata uang, sort dan filter.">Book to order list with add-ons; pay by card and non-card; voucher, currency, sort and filter.</span></li><li><b data-id="Hotel">Hotel</b><span data-id="Alur yang sama untuk hotel, plus hasil pencarian dan peta.">Same flow for hotels, plus search results and the map.</span></li><li><b data-id="Akun">Account</b><span data-id="Login sosial dan member, profil, password dan bottom sheet; navigasi webview.">Social and member login, profile, password and bottom sheets; webview navigation.</span></li><li><b data-id="Sign-off">Sign-off</b><span data-id="Ulangi di mobile web, lalu catat hasilnya di tab pre-release dashboard.">Repeat on mobile web, then log the result in the dashboard’s pre-release tab.</span></li></ol></div>
 </section>
 <section class="block" style="padding-top:24px">
 <div class="wrap back-row">
@@ -926,12 +893,12 @@ footer.site{padding:10px 0 24px}
 <section class="block alt">
 <div class="wrap">
 <div class="skills">
-<div class="skill"><h3 data-id="Strategi &amp;amp; manajemen test">Test strategy &amp; management</h3><div class="pills"><span class="pill">Test planning</span><span class="pill" data-id="Risk-based testing">Risk-based testing</span><span class="pill" data-id="Strategi regression">Regression strategy</span><span class="pill" data-id="Desain test case">Test case design</span><span class="pill">Release sign-off</span></div></div>
-<div class="skill"><h3 data-id="Otomasi testing">Test automation</h3><div class="pills"><span class="pill">Playwright</span><span class="pill">Cypress</span><span class="pill">WebdriverIO</span><span class="pill">Appium</span><span class="pill">Data-driven E2E</span></div></div>
-<div class="skill"><h3 data-id="AI dalam QA">AI in QA</h3><div class="pills"><span class="pill">AI agents</span><span class="pill">Claude</span><span class="pill">MCP</span><span class="pill">Prompt engineering</span><span class="pill" data-id="Eksekusi test berbasis AI">AI-driven test execution</span></div></div>
-<div class="skill"><h3>Mobile &amp; API testing</h3><div class="pills"><span class="pill">Native Android</span><span class="pill">Native iOS</span><span class="pill">Postman</span><span class="pill" data-id="Validasi REST API">REST API validation</span></div></div>
-<div class="skill"><h3>Observability &amp; delivery</h3><div class="pills"><span class="pill">Sentry</span><span class="pill">Root cause analysis</span><span class="pill" data-id="Integrasi CI/CD">CI/CD integration</span><span class="pill">Git</span><span class="pill">GitHub / GitLab</span></div></div>
-<div class="skill"><h3 data-id="Pemrograman &amp;amp; proses">Programming &amp; process</h3><div class="pills"><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Python</span><span class="pill">Agile/Scrum</span><span class="pill">Jira</span><span class="pill">Confluence</span></div></div>
+<div class="skill"><h3 data-id="Strategi &amp;amp; manajemen test">Test strategy &amp; management</h3><div class="pills"><span class="pill">Test planning</span><span class="pill">Risk-based testing</span><span class="pill" data-id="Strategi regression">Regression strategy</span><span class="pill" data-id="Desain test case">Test case design</span><span class="pill">Release sign-off</span><span class="pill">TestRail</span></div></div>
+<div class="skill"><h3 data-id="Otomasi testing">Test automation</h3><div class="pills"><span class="pill">Playwright</span><span class="pill">Cypress</span><span class="pill">WebdriverIO</span><span class="pill">Appium</span><span class="pill">Data-driven testing</span><span class="pill">Visual regression testing</span></div></div>
+<div class="skill"><h3 data-id="QA berbasis AI">AI-assisted QA</h3><div class="pills"><span class="pill">AI agents</span><span class="pill">Claude</span><span class="pill">MCP (Model Context Protocol)</span><span class="pill">Prompt engineering</span><span class="pill" data-id="Eksekusi test berbasis AI">AI-driven test execution</span></div></div>
+<div class="skill"><h3 data-id="Testing mobile &amp;amp; API">Mobile &amp; API testing</h3><div class="pills"><span class="pill">Android (UiAutomator2)</span><span class="pill">iOS (XCUITest)</span><span class="pill" data-id="Emulator &amp;amp; simulator">Emulators &amp; simulators</span><span class="pill">Postman</span><span class="pill">REST API testing</span></div></div>
+<div class="skill"><h3 data-id="Pelaporan &amp;amp; observability">Reporting &amp; observability</h3><div class="pills"><span class="pill">Sentry</span><span class="pill">Root cause analysis</span><span class="pill">Allure reports</span><span class="pill" data-id="Metrik &amp;amp; KPI QA">QA metrics &amp; KPIs</span><span class="pill">Slack reporting</span></div></div>
+<div class="skill"><h3 data-id="Engineering &amp;amp; proses">Engineering &amp; process</h3><div class="pills"><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Python</span><span class="pill">Git</span><span class="pill">GitHub / GitLab</span><span class="pill">CI/CD</span><span class="pill">Jira</span><span class="pill">Confluence</span><span class="pill">Agile / Scrum</span></div></div>
 </div>
 </div>
 </section>
@@ -961,7 +928,7 @@ footer.site{padding:10px 0 24px}
 <div class="lead">
 <ul>
 <li data-id="Memimpin dan membina tim QA beranggotakan empat orang, termasuk onboarding ke alur kerja berbasis AI.">Lead and mentor a four-person QA team, including onboarding to AI-assisted workflows.</li>
-<li data-id="Mengelola pipeline QA di Jira, dari ready-for-QA, fix, done hingga rejected.">Manage the QA pipeline in Jira, from ready-for-QA through fix, done and rejected.</li>
+<li data-id="Mengelola pipeline QA di Jira, dari Ready for QA, Need Fix, Done hingga Rejected.">Manage the QA pipeline in Jira, from Ready for QA through Need Fix, Done and Rejected.</li>
 <li data-id="Bertanggung jawab atas sign-off rilis aplikasi native melalui regression pre-release yang terstruktur.">Own native app release sign-off through a structured pre-release regression.</li>
 <li data-id="Menyusun laporan QA mingguan dan kuartalan tentang throughput, insiden dan pertumbuhan test case.">Publish weekly and quarterly QA reports on throughput, incidents and test case growth.</li>
 
@@ -971,15 +938,16 @@ footer.site{padding:10px 0 24px}
 </div>
 </section>
 <section class="block"><div class="wrap"><div class="sec-head"><span class="eyebrow" data-id="Alur kerja">Workflow</span><h2 data-id="Bagaimana satu tiket dites">How a ticket gets tested</h2><p data-id="Alur yang dipakai tim untuk setiap tiket, dari masuk sampai ditutup. AI menjalankan langkah berulang, tim QA tetap memegang keputusan akhir.">The flow the team follows for every ticket, from intake to close. AI runs the repetitive steps; the QA team keeps the final call.</p></div><ol class="flow8"><li><b data-id="Masuk">Intake</b><span data-id="Tiket diambil dari filter QA setelah lolos dua syarat: belum dites dan code review sudah disetujui.">Ticket picked from the QA filter after two gates: not yet tested, code review approved.</span></li><li><b data-id="Baca">Read</b><span data-id="AI agent membaca tiket beserta acceptance criteria-nya.">An AI agent reads the ticket and its acceptance criteria.</span></li><li><b data-id="Environment">Environment</b><span data-id="Environment test disiapkan per platform: desktop, mobile web, Android atau iOS.">Test environment set up per platform: desktop, mobile web, Android or iOS.</span></li><li><b data-id="Eksekusi">Execute</b><span data-id="Test case dari developer dijalankan, lengkap dengan bukti untuk setiap case.">Developer test cases run, with evidence captured for each one.</span></li><li><b data-id="Lapor">Report</b><span data-id="Hasil QA terstruktur diposting ke Jira: PASS, FAIL, NEED MANUAL atau NO TASK.">A structured QA result posted to Jira: PASS, FAIL, NEED MANUAL or NO TASK.</span></li><li><b data-id="Katalog">Catalog</b><span data-id="Test case baru dikonversi dan ditambahkan ke knowledge base test case.">New cases converted and appended to the test case knowledge base.</span></li><li><b data-id="Review">Review</b><span data-id="Tim QA mereview setiap hasil dari AI.">The QA team reviews every AI result.</span></li><li><b data-id="Selesai">Close</b><span data-id="Tim QA menentukan status akhir tiket di Jira.">The QA team sets the final Jira status.</span></li></ol></div></section>
-<section class="block alt"><div class="wrap"><div class="sec-head"><span class="eyebrow" data-id="Standar">Standards</span><h2 data-id="11 SOP yang saya susun">11 SOPs I authored</h2></div><div class="sopgrid"><div class="sop"><b data-id="Onboarding QA">QA onboarding</b><span data-id="Membuat QA engineer baru langsung produktif di alur kerja berbasis AI.">Getting a new QA engineer productive on the AI-assisted workflow.</span></div><div class="sop"><b data-id="Alur QA end-to-end">End-to-end QA workflow</b><span data-id="Alur lengkap 18 langkah dari tiket masuk sampai status akhir.">The full 18-step flow from ticket intake to final status.</span></div><div class="sop"><b data-id="Alur status QA di Jira">Jira QA status flow</b><span data-id="Syarat masuk dan empat status hasil yang valid.">Entry gates and the four valid verdicts.</span></div><div class="sop"><b data-id="Panduan QA check">QA check guide</b><span data-id="Checklist lintas fitur: bahasa, mata uang, sesi, jaringan, platform, error dan edge case.">Cross-feature checklist: locale, currency, session, network, platform, errors and edge cases.</span></div><div class="sop"><b data-id="Eksekusi test">Test execution</b><span data-id="Aturan menjalankan test case manual dan otomasi sesuai langkahnya.">Rules for running manual and automated test cases faithfully.</span></div><div class="sop"><b data-id="Pembuatan &amp; pemeliharaan test case">Test case creation & maintenance</b><span data-id="Pengecekan duplikat, format dan aturan prefix ID untuk katalog.">Duplicate checks, format and ID-prefix rules for the catalog.</span></div><div class="sop"><b data-id="Pelaporan bug">Bug reporting</b><span data-id="Jalur pelaporan untuk bug pre-release dan insiden production.">Filing paths for pre-release bugs and production incidents.</span></div><div class="sop"><b data-id="Severity &amp; prioritas">Severity & priority</b><span data-id="Skala P0–P7 untuk insiden, tanpa menebak saat severity belum jelas.">The P0–P7 scale for incidents, with no guessing when severity is unclear.</span></div><div class="sop"><b data-id="Pre-release aplikasi">App pre-release</b><span data-id="Cakupan device dan alur inti untuk setiap rilis Android dan iOS.">Device coverage and core flows for every Android and iOS release.</span></div><div class="sop"><b data-id="Metode pembayaran baru">New payment method</b><span data-id="Checklist untuk onboarding atau spot-check metode pembayaran.">Checklist for onboarding or spot-checking a payment method.</span></div><div class="sop"><b data-id="Pengecekan per layar">Screen-specific checks</b><span data-id="Pengecekan wajib untuk layar tertentu, dikumpulkan dari bug nyata.">Mandatory checks tied to specific screens, grown from real bugs.</span></div></div></div></section>
+<section class="block alt"><div class="wrap"><div class="sec-head"><span class="eyebrow" data-id="Standar">Standards</span><h2 data-id="11 SOP yang saya susun">11 SOPs I authored</h2></div><div class="sopgrid"><div class="sop"><b data-id="Onboarding QA">QA onboarding</b><span data-id="Membuat QA engineer baru langsung produktif di alur kerja berbasis AI.">Getting a new QA engineer productive on the AI-assisted workflow.</span></div><div class="sop"><b data-id="Alur QA end-to-end">End-to-end QA workflow</b><span data-id="Alur lengkap 18 langkah dari tiket masuk sampai status akhir.">The full 18-step flow from ticket intake to final status.</span></div><div class="sop"><b data-id="Alur status QA di Jira">Jira QA status flow</b><span data-id="Syarat masuk dan empat status hasil yang valid.">Entry gates and the four valid verdicts.</span></div><div class="sop"><b data-id="Panduan QA check">QA check guide</b><span data-id="Checklist lintas fitur: bahasa, mata uang, sesi, jaringan, platform, error dan edge case.">Cross-feature checklist: locale, currency, session, network, platform, errors and edge cases.</span></div><div class="sop"><b data-id="Eksekusi test">Test execution</b><span data-id="Aturan menjalankan test case manual dan otomasi persis sesuai langkahnya.">Rules for running manual and automated test cases exactly as written.</span></div><div class="sop"><b data-id="Pembuatan &amp; pemeliharaan test case">Test case creation & maintenance</b><span data-id="Pengecekan duplikat, format dan aturan prefix ID untuk katalog.">Duplicate checks, format and ID-prefix rules for the catalog.</span></div><div class="sop"><b data-id="Pelaporan bug">Bug reporting</b><span data-id="Jalur pelaporan untuk bug pre-release dan insiden production.">Filing paths for pre-release bugs and production incidents.</span></div><div class="sop"><b data-id="Severity &amp; prioritas">Severity & priority</b><span data-id="Skala P0–P7 untuk insiden, dengan aturan eskalasi saat severity belum jelas.">The P0–P7 incident scale, with an escalation rule when severity is unclear.</span></div><div class="sop"><b data-id="Pre-release aplikasi">App pre-release</b><span data-id="Cakupan device dan alur inti untuk setiap rilis Android dan iOS.">Device coverage and core flows for every Android and iOS release.</span></div><div class="sop"><b data-id="Metode pembayaran baru">New payment method</b><span data-id="Checklist untuk onboarding atau spot-check metode pembayaran.">Checklist for onboarding or spot-checking a payment method.</span></div><div class="sop"><b data-id="Pengecekan per layar">Screen-specific checks</b><span data-id="Pengecekan wajib untuk layar tertentu, disusun dari bug production sebelumnya.">Mandatory checks for specific screens, derived from past production bugs.</span></div></div></div></section>
 </main>
 <main id="about" class="view" hidden>
-<header class="page-head"><div class="wrap"><span class="eyebrow" data-id="Tentang">About</span><h1 class="ph-title" data-id="Kepemimpinan QA berbasis engineering">Quality leadership built on engineering</h1><p class="lede" data-id="Latar belakang, pendidikan dan bahasa.">Background, education and languages.</p></div></header>
+<header class="page-head"><div class="wrap"><span class="eyebrow" data-id="Tentang">About</span><h1 class="ph-title" data-id="Kepemimpinan QA berbasis engineering">Quality leadership built on engineering</h1><p class="lede" data-id="Ringkasan profil, pendidikan dan bahasa.">Profile summary, education and languages.</p></div></header>
 <section class="block">
 <div class="wrap about">
 <div>
-<p data-id="Saya memulai karier sebagai QA engineer manual dan otomasi pada 2016, dan memimpin fungsi QA sejak 2019. Pekerjaan saya mencakup seluruh siklus kualitas: strategi testing, otomasi, release sign-off, hingga monitoring production. Saya merancang strategi testing berbasis risiko dan membangun framework otomasi dengan JavaScript/TypeScript.">I started as a manual and automation QA engineer in 2016 and have led the QA function since 2019. My work covers the full quality lifecycle: test strategy, automation, release sign-off and production monitoring. I design risk-based test strategies and build automation frameworks in JavaScript/TypeScript.</p>
-<p data-id="Belakangan saya fokus pada QA berbasis AI. Saya membangun agent dan knowledge base test yang terstruktur, sehingga regression rutin, verifikasi tiket dan pelaporan bisa berjalan dengan pengawasan minimal, dan tim bisa fokus pada risiko, edge case dan exploratory testing.">Recently I've focused on AI-assisted QA. I build agents and a structured test knowledge base so that routine regression, ticket verification and reporting run with little supervision, and the team can focus on risk, edge cases and exploratory testing.</p>
+<p data-id="QA Manager dengan pengalaman 10+ tahun di travel-tech, memimpin tim QA beranggotakan 4 orang dan bertanggung jawab atas kualitas produk platform pemesanan travel online di desktop web, mobile web, Android dan iOS. Saya merancang strategi testing berbasis risiko dan membangun otomasi dengan JavaScript/TypeScript menggunakan Playwright, Cypress, WebdriverIO, Appium dan Postman, terintegrasi dengan CI/CD dalam tim Agile/Scrum.">QA Manager with 10+ years in travel-tech, leading a 4-person QA team and owning product quality for an online travel booking platform across desktop web, mobile web, Android and iOS. I design risk-based test strategies and build automation in JavaScript/TypeScript with Playwright, Cypress, WebdriverIO, Appium and Postman, integrated into CI/CD in Agile/Scrum teams.</p>
+<p data-id="Fokus utama saya sekarang adalah QA berbasis AI. Saya membangun 35+ AI agent skill kustom (Claude, MCP) dan knowledge base terstruktur berisi 4.000+ test case, sehingga AI bisa menjalankan E2E test, memverifikasi tiket Jira dan menyiapkan laporan QA, sementara tim mereview setiap hasilnya.">My main focus now is AI-assisted QA. I built 35+ custom AI agent skills (Claude, MCP) and a structured knowledge base of 4,000+ test cases, so AI can run E2E tests, verify Jira tickets and prepare QA reports while the team reviews every result.</p>
+<p data-id="Tujuannya selalu sama: coverage lebih tinggi, defect production lebih sedikit, serta rilis yang lebih cepat dan aman.">The goal is always the same: higher coverage, fewer production defects and faster, safer releases.</p>
 <dl class="facts" style="margin-top:28px">
 <div><dt data-id="Posisi saat ini">Current role</dt><dd data-id="QA Manager, sejak 2019">QA Manager, since 2019</dd></div>
 <div><dt data-id="Industri">Industry</dt><dd data-id="Pemesanan travel online">Online travel booking</dd></div>
