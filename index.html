@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jaka Putra Tikalung — QA Manager with 10+ years in software quality. Test strategy, web and mobile automation, and AI-assisted QA.">
+<meta name="author" content="Jaka Putra Tikalung">
+<meta name="theme-color" content="#0D5C6B">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jaka Putra Tikalung · QA Manager">
+<meta property="og:description" content="Jaka Putra Tikalung — QA Manager with 10+ years in software quality. Test strategy, web and mobile automation, and AI-assisted QA.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D5C6B'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='22' font-weight='700' fill='white' text-anchor='middle'%3EJPT%3C/text%3E%3C/svg%3E">
+<title>Jaka Putra Tikalung · QA Manager</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#F4F7F6; --bg-alt:#EAF0EE; --surface:#FFFFFF; --ink:#12201C; --ink-2:#2B3B37; --muted:#5A6C67; --line:#D6E0DD;
+  --accent:#0D5C6B; --accent-ink:#FFFFFF; --accent-soft:#DDEDF0; --pass:#2B7A4D; --pass-soft:#E1F1E7;
+  --shadow:0 1px 2px rgba(18,32,28,.05), 0 8px 24px rgba(18,32,28,.06);
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0D1412; --bg-alt:#111A18; --surface:#15201D; --ink:#E4ECE9; --ink-2:#C4D1CD; --muted:#93A6A1; --line:#24312D;
+    --accent:#6CC1D0; --accent-ink:#0D1412; --accent-soft:#15313A; --pass:#72C696; --pass-soft:#163126;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D1412; --bg-alt:#111A18; --surface:#15201D; --ink:#E4ECE9; --ink-2:#C4D1CD; --muted:#93A6A1; --line:#24312D;
+  --accent:#6CC1D0; --accent-ink:#0D1412; --accent-soft:#15313A; --pass:#72C696; --pass-soft:#163126;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1;letter-spacing:-.01em}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:700;font-size:17px}
+.mono-mark{width:34px;height:34px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:13px;font-weight:800;letter-spacing:.02em}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--ink-2);text-decoration:none;font-size:14.5px;font-weight:500}
+.nav ul a:hover,.nav ul a.current{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14.5px var(--body);padding:10px 18px;border-radius:8px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* hero */
+.hero{padding-block:80px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+.avail{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--pass);box-shadow:0 0 0 3px var(--pass-soft)}
+.hero h1{font-size:clamp(42px,6.4vw,72px);font-weight:800;margin-top:22px}
+.hero .role{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.4vw,25px);color:var(--accent);margin-top:14px}
+.hero .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin-top:20px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+.run{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);font-family:var(--mono);font-size:13px;overflow:hidden}
+.run-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--muted)}
+.dots{display:flex;gap:6px}.dots span{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.run-body{padding:14px 16px;display:grid;gap:10px}
+.row{display:flex;gap:12px;align-items:baseline;color:var(--ink-2)}
+.chip{font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;letter-spacing:.04em;flex:none}
+.chip.pass{background:var(--pass-soft);color:var(--pass)}
+.chip.info{background:var(--accent-soft);color:var(--accent)}
+.run-foot{display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--line);color:var(--pass);font-weight:500}
+.run-foot span:last-child{color:var(--muted);font-weight:400}
+
+/* stats */
+.stats{background:var(--surface);border-block:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+.stat{padding:28px 20px}
+.stat + .stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--display);font-size:38px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1;color:var(--ink)}
+.stat span{display:block;font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.4}
+
+/* sections */
+section.block{padding-block:88px}
+section.alt{background:var(--bg-alt)}
+.sec-head{display:grid;gap:10px;margin-bottom:40px;max-width:720px}
+.sec-head h2{font-size:clamp(30px,4vw,42px);font-weight:700}
+.sec-head p{color:var(--muted);font-size:16.5px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start}
+.about p{font-size:17px;color:var(--ink-2);max-width:62ch}
+.about p + p{margin-top:16px}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding-block:14px;border-bottom:1px solid var(--line);font-size:15px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-weight:500;text-align:right}
+
+/* timeline */
+.tl{position:relative;display:grid;gap:28px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding-left:40px}
+.tl-item::before{content:"";position:absolute;left:0;top:8px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
+.tl-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.tl-card h3{font-size:23px;font-weight:700}
+.period{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.org{color:var(--muted);margin-top:6px;font-size:15px}
+.tl-card ul{margin:18px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--ink-2)}
+.tl-card li::marker{color:var(--accent)}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s ease, box-shadow .2s ease}
+.case:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:var(--shadow)}
+.case h3{font-size:22px;font-weight:700}
+.case > p{color:var(--ink-2);font-size:15.5px}
+.case dl{margin:0;display:grid;gap:12px;font-size:15px;padding-top:14px;border-top:1px dashed var(--line)}
+.case dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.case dd{margin:0;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tag{font-family:var(--mono);font-size:12px;padding:4px 9px;border-radius:6px;background:var(--bg-alt);color:var(--ink-2);border:1px solid var(--line)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.skill h3{font-size:17px;font-weight:600;margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:14px;padding:6px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+/* expertise */
+.exp{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.exp div{padding-top:18px;border-top:2px solid var(--accent)}
+.exp b{display:block;font-family:var(--display);font-size:18px;font-weight:600}
+.exp small{display:block;color:var(--muted);font-size:14.5px;margin-top:6px;line-height:1.5}
+
+/* leadership */
+.lead{display:grid;grid-template-columns:1.1fr 1fr;gap:56px}
+.lead ul{margin:0;padding-left:20px;display:grid;gap:12px;color:var(--ink-2);font-size:16px}
+.lead li::marker{color:var(--accent)}
+.sops-title{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.sops{display:flex;flex-wrap:wrap;gap:8px}
+.sops span{font-size:14px;padding:7px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.edu-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:8px}
+.edu-card h3{font-size:21px;font-weight:700}
+
+/* contact */
+.contact-band{background:var(--accent);color:var(--accent-ink);border-radius:20px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contact-band h2{font-size:clamp(30px,4vw,44px);font-weight:700}
+.contact-band p{opacity:.85;margin-top:12px;font-size:17px;max-width:44ch}
+.lines{display:grid;gap:12px}
+.line{display:flex;justify-content:space-between;align-items:center;gap:12px;background:color-mix(in srgb,var(--accent-ink) 12%,transparent);border:1px solid color-mix(in srgb,var(--accent-ink) 25%,transparent);border-radius:10px;padding:14px 16px;flex-wrap:wrap}
+.line .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;display:block}
+.line .v{font-family:var(--mono);font-size:14.5px;user-select:all;word-break:break-all}
+.line button,.line a{font:600 13px var(--body);background:var(--accent-ink);color:var(--accent);border:0;border-radius:6px;padding:7px 12px;cursor:pointer;text-decoration:none}
+footer.site{padding-block:40px;color:var(--muted);font-size:14px}
+footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* responsive */
+@media (max-width:960px){
+  .nav ul{display:none}
+  .hero{padding-block:48px 40px}
+  .hero .wrap,.about,.lead,.contact-band{grid-template-columns:1fr;gap:36px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat + .stat{border-left:0}
+  .stat{border-bottom:1px solid var(--line)}
+  .stats .stat:last-child{grid-column:1 / -1;border-bottom:0}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .exp{grid-template-columns:repeat(2,1fr)}
+  section.block{padding-block:64px}
+  .contact-band{padding:36px 28px}
+}
+@media (max-width:640px){
+  .wrap{padding-inline:16px}
+  .cases,.skills,.exp,.edu{grid-template-columns:1fr}
+  .case,.tl-card,.edu-card{padding:22px}
+  .nav .btn{padding:8px 12px;font-size:13.5px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .run-body .row{animation:rise .45s ease both}
+  .run-body .row:nth-child(2){animation-delay:.08s}.run-body .row:nth-child(3){animation-delay:.16s}
+  .run-body .row:nth-child(4){animation-delay:.24s}.run-body .row:nth-child(5){animation-delay:.32s}
+  @keyframes rise{from{transform:translateY(5px)}to{transform:none}}
+}
+.who{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--accent), var(--shadow);flex:none}
+@media (max-width:640px){.avatar{width:72px;height:72px}}
+
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{height:38px;min-width:38px;padding:0 10px;display:inline-grid;place-items:center;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 13px var(--mono);letter-spacing:.04em;cursor:pointer}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.icon-btn svg{width:18px;height:18px}
+.theme-sun{display:none}
+:root[data-theme="dark"] .theme-sun{display:block} :root[data-theme="dark"] .theme-moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-sun{display:block}:root:not([data-theme="light"]) .theme-moon{display:none}}
+.burger{display:none}
+.mnav{border-top:1px solid var(--line);background:var(--bg)}
+.mnav ul{list-style:none;margin:0 auto;padding:8px 16px 16px;max-width:1120px;display:grid}
+.mnav a{display:block;padding:12px 4px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}
+.mnav li:last-child a{border-bottom:0;color:var(--accent)}
+@media (max-width:960px){.burger{display:inline-grid}}
+@media (min-width:961px){.mnav{display:none!important}}
+@media (max-width:640px){.nav-cta{display:none}.brand span:last-child{font-size:15px}}
+@media (max-width:380px){.brand span:last-child{display:none}}
+
+/* projects view */
+.nav ul a.is-new::after{content:"NEW";font:600 9px var(--mono);letter-spacing:.06em;margin-left:6px;padding:2px 5px;border-radius:4px;background:var(--accent);color:var(--accent-ink);vertical-align:2px}
+.p-hero{padding-block:72px 32px}
+.p-hero h2{font-size:clamp(36px,5.5vw,60px);font-weight:800;margin-top:12px}
+.p-hero .lede{font-size:17.5px;color:var(--ink-2);max-width:62ch;margin-top:16px}
+.p-jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.p-jump a{font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);text-decoration:none}
+.p-jump a:hover{border-color:var(--accent);color:var(--accent)}
+.proj{padding-block:72px}
+.proj.alt{background:var(--bg-alt)}
+.proj-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.proj-grid.rev .proj-text{order:2}
+.p-num{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.proj-text h3{font-size:clamp(26px,3.4vw,34px);font-weight:700;margin-top:6px}
+.p-sum{font-size:16.5px;color:var(--ink-2);margin-top:14px}
+.feat{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.feat li{position:relative;padding-left:26px;font-size:15.5px;color:var(--ink-2)}
+.feat li::before{content:"✓";position:absolute;left:0;top:0;font:600 13px var(--mono);color:var(--pass)}
+.proj-text .tags{margin-top:20px}
+.mock{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;position:relative;min-width:0}
+.mock figcaption{position:absolute;right:12px;bottom:10px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mock-bar{display:flex;align-items:center;gap:14px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);overflow:hidden}
+.mono{font-family:var(--mono)}
+.mock-tabs{display:flex;gap:14px;white-space:nowrap;overflow:hidden}
+.mock-tabs b{color:var(--accent);font-weight:600}
+.mock-body{padding:18px 18px 36px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.kpis div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kpis small{display:block;font-size:11.5px;color:var(--muted)}
+.kpis b{font-family:var(--display);font-size:22px;font-variant-numeric:tabular-nums}
+.matrix{display:grid;gap:6px;font-size:12px}
+.mx-row{display:grid;grid-template-columns:64px repeat(5,1fr);gap:6px;align-items:center}
+.mx-head span{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center}
+.mx-row > span:first-child{color:var(--ink-2);text-align:left}
+.mx-row i,.legend i{display:block;height:22px;border-radius:5px}
+.legend{display:flex;gap:14px;margin-top:12px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px}
+i.p{background:var(--pass)} i.k{background:#D09A2E} i.x{background:#C24B3E} i.f{background:var(--line)}
+.tc{display:grid;grid-template-columns:150px 1fr;gap:14px}
+.tree{list-style:none;margin:0;padding:0;font:13px var(--mono);color:var(--ink-2);display:grid;gap:5px}
+.tree li{padding:3px 8px;border-radius:5px}
+.tree li:not(.dir){margin-left:12px}
+.tree .dir{color:var(--muted)}
+.tree .on{background:var(--accent-soft);color:var(--accent)}
+.tc-table{display:grid;font-size:12.5px;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0}
+.tc-row{display:grid;grid-template-columns:70px 1.2fr 1fr;gap:10px;padding:9px 12px;border-top:1px solid var(--line)}
+.tc-row.th{border-top:0;background:var(--bg-alt);font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tc-row .id{font-family:var(--mono);color:var(--accent)}
+.term .log{margin:0;padding:18px 18px 40px;font:13px/1.75 var(--mono);color:var(--ink-2);white-space:pre-wrap;overflow-x:auto}
+.log .c{color:var(--accent)} .log .d{color:var(--muted)} .log .ok{color:var(--pass);font-weight:600} .log .bad{color:#C24B3E;font-weight:600}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto .8fr;gap:10px;align-items:center}
+.fbox{border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
+.fbox small{display:block;font:11px var(--mono);color:var(--muted);margin-bottom:6px;overflow-wrap:anywhere}
+.fbox code{font:12.5px/1.7 var(--mono);color:var(--ink-2)}
+.fbox.ok{border-color:var(--pass)} .fbox.ok code{color:var(--pass)}
+.arrow{font-family:var(--mono);color:var(--accent);font-size:18px}
+.pipe{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;counter-reset:s}
+.pipe li{border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:6px;align-content:start;font-size:12.5px;color:var(--ink-2);min-width:0}
+.pipe b{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.chip.bad{background:color-mix(in srgb,#C24B3E 15%,transparent);color:#C24B3E}
+.pipe .chip{justify-self:start}
+.tk{display:grid;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:12.5px}
+.tk-row{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;padding:9px 12px;border-top:1px solid var(--line)}
+.tk-row:first-child{border-top:0}
+.tk-row span:first-child{font-family:var(--mono);color:var(--muted)}
+.rc{display:grid;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px}
+.rc-row{display:grid;grid-template-columns:1fr 70px 70px;gap:10px;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
+.rc-row.th{border-top:0;background:var(--bg-alt);font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rc-row i{font-style:normal;text-align:center;font-weight:700}
+.rc-row .y{color:var(--pass)} .rc-row .w{color:#D09A2E} .rc-row .n{color:var(--muted)}
+.rc-row.th span:not(:first-child){text-align:center}
+.rc-foot{margin-top:12px}
+.back-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.more-proj{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 26px;border:1px dashed var(--accent);border-radius:14px;background:var(--accent-soft)}
+.more-proj p{color:var(--ink-2);font-size:15.5px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) i.x{background:#E0705F}}
+:root[data-theme="dark"] i.x{background:#E0705F}
+@media (max-width:960px){
+  .proj-grid{grid-template-columns:1fr;gap:32px}
+  .proj-grid.rev .proj-text{order:0}
+  .p-hero{padding-block:48px 16px}
+  .proj{padding-block:56px}
+}
+@media (max-width:640px){
+  .tc{grid-template-columns:1fr}
+  .tree{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);justify-self:center}
+  .pipe{grid-template-columns:repeat(2,1fr)}
+  .tc-row{grid-template-columns:62px 1fr}
+  .tc-row span:last-child{grid-column:2;color:var(--muted)}
+  .tc-row.th span:last-child{display:none}
+  .mx-row{grid-template-columns:54px repeat(5,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main" class="nav">
+<div class="wrap">
+<a class="brand" href="#top"><span class="mono-mark">JPT</span><span>Jaka Putra Tikalung</span></a>
+<ul>
+<li><a data-id="Tentang" href="#about">About</a></li>
+<li><a data-id="Pengalaman" href="#experience">Experience</a></li>
+<li><a data-id="Karya" href="#work">Work</a></li>
+<li><a class="is-new" data-id="Proyek" href="#projects">Projects</a></li>
+<li><a data-id="Keahlian" href="#skills">Skills</a></li>
+<li><a data-id="Pendidikan" href="#education">Education</a></li>
+</ul>
+<div class="nav-actions">
+<button aria-label="Ganti ke Bahasa Indonesia" class="icon-btn" id="langBtn" type="button">ID</button>
+<button aria-label="Toggle dark mode" class="icon-btn" id="themeBtn" type="button">
+<svg aria-hidden="true" class="theme-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+<svg aria-hidden="true" class="theme-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+<a class="btn btn-primary nav-cta" data-id="Hubungi saya" href="#contact">Get in touch</a>
+<button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="icon-btn burger" id="menuBtn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</div>
+<div class="mnav" hidden="" id="mnav">
+<ul>
+<li><a data-id="Tentang" href="#about">About</a></li>
+<li><a data-id="Pengalaman" href="#experience">Experience</a></li>
+<li><a data-id="Karya" href="#work">Work</a></li>
+<li><a class="is-new" data-id="Proyek" href="#projects">Projects</a></li>
+<li><a data-id="Keahlian" href="#skills">Skills</a></li>
+<li><a data-id="Pendidikan" href="#education">Education</a></li>
+<li><a data-id="Hubungi saya" href="#contact">Get in touch</a></li>
+</ul>
+</div>
+</nav>
+<main id="top">
+<header class="hero">
+<div class="wrap">
+<div>
+<div class="who"><img alt="Portrait of Jaka Putra Tikalung" class="avatar" height="88" src="data:image/jpeg;base64,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" width="88"/><span class="avail"><i aria-hidden="true"></i>QA Manager · Jakarta, Indonesia</span></div>
+<h1>Jaka Putra Tikalung</h1>
+<p class="role" data-id="Quality Assurance Manager · Otomasi Testing Berbasis AI">Quality Assurance Manager · AI-Assisted Test Automation</p>
+<p class="lede" data-id="Lebih dari 10 tahun di bidang software quality. Saya memimpin QA untuk platform pemesanan travel bertrafik tinggi di desktop web, mobile web, Android dan iOS, dengan strategi testing, otomasi dan AI agent agar rilis lebih cepat dengan lebih sedikit defect di production.">10+ years in software quality. I lead QA for a high-traffic travel booking platform across desktop web, mobile web, Android and iOS, using test strategy, automation and AI agents to ship faster with fewer production defects.</p>
+<div class="cta">
+<a class="btn btn-primary" data-id="Lihat karya pilihan" href="#work">View selected work</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/jaka-putra-tikalung-03a529410" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.54h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4z"></path></svg>
+            LinkedIn
+          </a>
+</div>
+</div>
+<aside aria-label="Profile summary shown as a test run" class="run">
+<div class="run-head"><span aria-hidden="true" class="dots"><span></span><span></span><span></span></span><span>suite: qa-leadership</span></div>
+<div class="run-body">
+<div class="row"><span class="chip pass">PASS</span><span data-id="Memimpin tim QA secara menyeluruh">Lead a QA team end to end</span></div>
+<div class="row"><span class="chip pass">PASS</span><span data-id="Otomasi di web dan aplikasi native">Automation across web and native apps</span></div>
+<div class="row"><span class="chip pass">PASS</span><span data-id="AI agent untuk E2E dan testing tiket">AI agents for E2E and ticket testing</span></div>
+<div class="row"><span class="chip pass">PASS</span><span data-id="Payment, i18n/RTL, SSO, deeplink">Payments, i18n/RTL, SSO, deeplinks</span></div>
+<div class="row"><span class="chip info">INFO</span><span data-id="Metrik QA, SOP dan release sign-off">QA metrics, SOPs and release sign-off</span></div>
+</div>
+<div class="run-foot"><span data-id="✓ 5 lulus">✓ 5 passed</span><span data-id="10+ thn">10+ yrs</span></div>
+</aside>
+</div>
+</header>
+<div class="stats">
+<div class="wrap" role="list">
+<div class="stat" role="listitem"><b>10+</b><span data-id="tahun di software quality assurance">years in software quality assurance</span></div>
+<div class="stat" role="listitem"><b>4</b><span data-id="platform: desktop, mobile web, Android, iOS">platforms: desktop, mobile web, Android, iOS</span></div>
+<div class="stat" role="listitem"><b>4,000+</b><span data-id="test case di 40+ area fitur">test cases across 40+ feature areas</span></div>
+<div class="stat" role="listitem"><b>35+</b><span data-id="AI agent skill yang dibangun untuk QA">AI agent skills built for QA</span></div>
+<div class="stat" role="listitem"><b>4</b><span data-id="orang di tim QA yang saya pimpin">people on the QA team I lead</span></div>
+</div>
+</div>
+<section class="block" id="about">
+<div class="wrap about">
+<div class="sec-head" style="margin:0">
+<span class="eyebrow" data-id="Tentang">About</span>
+<h2 data-id="Kepemimpinan QA berbasis engineering">Quality leadership built on engineering</h2>
+</div>
+<div>
+<p data-id="Saya memulai karier sebagai QA engineer manual dan otomasi pada 2016, dan memimpin fungsi QA sejak 2019. Pekerjaan saya mencakup seluruh siklus kualitas: review requirement, strategi testing, otomasi, release sign-off, hingga monitoring production.">I started as a manual and automation QA engineer in 2016 and have led the QA function since 2019. My work covers the full quality lifecycle: requirement review, test strategy, automation, release sign-off and production monitoring.</p>
+<p data-id="Belakangan saya fokus pada QA berbasis AI. Saya membangun agent dan knowledge base test yang terstruktur, sehingga regression rutin, verifikasi tiket dan pelaporan bisa berjalan dengan pengawasan minimal, dan tim bisa fokus pada risiko, edge case dan exploratory testing.">Recently I've focused on AI-assisted QA. I build agents and a structured test knowledge base so that routine regression, ticket verification and reporting run with little supervision, and the team can focus on risk, edge cases and exploratory testing.</p>
+<dl class="facts" style="margin-top:28px">
+<div><dt data-id="Posisi saat ini">Current role</dt><dd data-id="QA Manager, sejak 2019">QA Manager, since 2019</dd></div>
+<div><dt data-id="Industri">Industry</dt><dd>Online travel &amp; e-commerce</dd></div>
+<div><dt data-id="Lokasi">Location</dt><dd>Jakarta, Indonesia</dd></div>
+<div><dt data-id="Bahasa">Languages</dt><dd data-id="Inggris, Indonesia">English, Bahasa Indonesia</dd></div>
+</dl>
+</div>
+</div>
+</section>
+<section class="block alt" id="experience">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-id="Pengalaman">Experience</span>
+<h2 data-id="10 tahun, satu produk, cakupan yang terus berkembang">10 years, one product, growing scope</h2>
+</div>
+<div class="tl">
+<div class="tl-item">
+<article class="tl-card">
+<div class="tl-top"><h3>Quality Assurance Manager</h3><span class="period" data-id="Jan 2019 – Sekarang · 7 thn 9 bln">Jan 2019 – Present · 7 yrs 9 mos</span></div>
+<p class="org" data-id="Platform pemesanan travel online · Jakarta · Full-time">Online travel booking platform · Jakarta · Full-time</p>
+<ul>
+<li data-id="Bertanggung jawab atas kualitas produk di desktop web, mobile web, Android dan iOS, serta memimpin tim berisi empat QA engineer.">Own product quality across desktop web, mobile web, Android and iOS, and lead a team of four QA engineers.</li>
+<li data-id="Menyusun strategi testing manual dan otomasi dengan Playwright, Cypress, WebdriverIO dan Appium, terintegrasi dengan CI/CD dalam alur kerja Agile/Scrum.">Define manual and automation test strategy with Playwright, Cypress, WebdriverIO and Appium, integrated with CI/CD in an Agile/Scrum workflow.</li>
+<li data-id="Membangun praktik QA berbasis AI: agent skill LLM kustom (Claude, MCP) dan knowledge base terstruktur yang menjalankan E2E test, verifikasi tiket Jira dan pelaporan.">Built an AI-assisted QA practice: custom LLM agent skills (Claude, MCP) and a structured knowledge base that run E2E tests, Jira ticket verification and reporting.</li>
+<li data-id="Mengotomasi alur pemesanan secara end-to-end, dari pencarian dan form pemesanan, pembayaran, hingga verifikasi order.">Automated complete booking flows end to end, from search and booking form through payment to order verification.</li>
+<li data-id="Memimpin payment testing untuk kartu 3DS/OTP, PayPal, e-wallet, voucher dan promo.">Lead payment testing across card 3DS/OTP, PayPal, e-wallets, vouchers and promotions.</li>
+<li data-id="Menjalankan regression lintas platform, smoke dan exploratory testing, serta testing i18n/L10n (termasuk RTL), SSO/OAuth dan deeplink.">Run cross-platform regression, smoke and exploratory testing, plus i18n/L10n (including RTL), SSO/OAuth and deeplink testing.</li>
+<li data-id="Bertanggung jawab atas metrik QA, pelaporan, SOP dan dokumentasi. Meningkatkan test coverage, menurunkan defect production dan mempercepat siklus rilis.">Own QA metrics, reporting, SOPs and documentation. Increased test coverage, reduced production defects and shortened release cycles.</li>
+</ul>
+</article>
+</div>
+<div class="tl-item">
+<article class="tl-card">
+<div class="tl-top"><h3>QA Engineer (Manual &amp; Automation)</h3><span class="period" data-id="Jan 2016 – Jan 2019 · 3 thn 1 bln">Jan 2016 – Jan 2019 · 3 yrs 1 mo</span></div>
+<p class="org" data-id="Platform pemesanan travel online · Jakarta · Full-time">Online travel booking platform · Jakarta · Full-time</p>
+<ul>
+<li data-id="Melakukan testing manual dan otomasi untuk produk web dan mobile.">Performed manual and automated testing for web and mobile products.</li>
+<li data-id="Merancang test case dan test script, termasuk API testing dengan Postman dan framework otomasi.">Designed test cases and test scripts, including API testing with Postman and automation frameworks.</li>
+<li data-id="Berkontribusi pada proses QA harian untuk menjaga kualitas produk tetap konsisten di setiap rilis.">Contributed to day-to-day QA processes to keep product quality consistent across releases.</li>
+</ul>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="block" id="work">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-id="Karya pilihan">Selected work</span>
+<h2 data-id="Studi kasus">Case studies</h2>
+<p data-id="Detail perusahaan dan produk dirahasiakan. Yang ditampilkan adalah pendekatan dan hasilnya.">Company and product details are kept confidential. What follows is the approach and the outcome.</p>
+</div>
+<div class="cases">
+<article class="case">
+<span class="eyebrow" data-id="QA berbasis AI">AI-assisted QA</span>
+<h3 data-id="AI agent yang memverifikasi tiket Jira">AI agents that verify Jira tickets</h3>
+<p data-id="Agent membaca setiap tiket, mengidentifikasi platform yang terdampak, menjalankan test case dari developer di browser atau device, lalu mengirim hasil QA yang terstruktur kembali ke Jira.">An agent reads each ticket, identifies the affected platform, runs the developer's test cases in a browser or on a device, and posts a structured QA result back to Jira.</p>
+<dl>
+<div><dt data-id="Yang dibangun">Built</dt><dd data-id="35+ agent skill untuk verifikasi tiket, pengambilan bukti, pembuatan test case, pelaporan insiden dan reporting">35+ agent skills covering ticket verification, evidence capture, test case generation, incident filing and reporting</dd></div>
+<div><dt data-id="Hasil">Outcome</dt><dd data-id="Verifikasi berulang ditangani AI, engineer fokus pada edge case dan exploratory testing">Repetitive verification handled by AI, with engineers focused on edge cases and exploratory testing</dd></div>
+</dl>
+<div class="tags"><span class="tag">LLM agents</span><span class="tag">Model Context Protocol</span><span class="tag">Jira REST API</span><span class="tag">Test orchestration</span></div>
+</article>
+<article class="case">
+<span class="eyebrow" data-id="Manajemen test">Test management</span>
+<h3 data-id="Knowledge base test case yang dirancang untuk AI">A test case knowledge base built for AI</h3>
+<p data-id="Katalog terstruktur berisi 4.000+ test case, dikelompokkan per fitur dengan ID yang konsisten dan satu indeks, sehingga engineer dan agent bisa menemukan test case apa pun dalam sekali pencarian.">A structured catalog of 4,000+ test cases, organised by feature with consistent IDs and a single index, so engineers and agents can locate any case in one search.</p>
+<dl>
+<div><dt data-id="Yang dibangun">Built</dt><dd data-id="Skenario E2E, regression suite pre-release aplikasi native, test case dari insiden, dan audit konsistensi katalog">E2E scenarios, native app pre-release regression suites, incident-driven test cases and catalog consistency audits</dd></div>
+<div><dt data-id="Hasil">Outcome</dt><dd data-id="Satu sumber kebenaran yang dibaca langsung oleh suite otomasi">One source of truth that automation suites read from directly</dd></div>
+</dl>
+<div class="tags"><span class="tag">Test design</span><span class="tag">Test coverage</span><span class="tag">Regression suites</span></div>
+</article>
+<article class="case">
+<span class="eyebrow" data-id="Otomasi testing">Test automation</span>
+<h3 data-id="Otomasi pemesanan end-to-end">End-to-end booking automation</h3>
+<p data-id="Pemesanan pesawat, hotel, aktivitas, kereta dan bus diotomasi end-to-end di desktop dan mobile, sampai pembayaran 3DS dan verifikasi detail order.">Flight, hotel, activity, train and bus bookings automated end to end on desktop and mobile, through to a 3DS payment and verification of the order detail.</p>
+<dl>
+<div><dt data-id="Yang dibangun">Built</dt><dd data-id="Suite Playwright data-driven untuk desktop dan mobile web, plus otomasi Android dan iOS native dengan Appium dan WebdriverIO">Data-driven Playwright suites for desktop and mobile web, plus native Android and iOS automation with Appium and WebdriverIO</dd></div>
+<div><dt data-id="Hasil">Outcome</dt><dd data-id="E2E berjalan setiap hari, dengan tren pass, flaky, failed dan skipped yang terpantau">Daily E2E runs, with pass, flaky, failed and skipped trends tracked over time</dd></div>
+</dl>
+<div class="tags"><span class="tag">Playwright</span><span class="tag">WebdriverIO</span><span class="tag">Appium</span><span class="tag">Data-driven testing</span></div>
+</article>
+<article class="case">
+<span class="eyebrow">Quality engineering</span>
+<h3 data-id="Monitoring production &amp;amp; metrik QA">Production monitoring &amp; QA metrics</h3>
+<p data-id="Menghubungkan rilis dengan kondisi production: monitoring error, root cause analysis atas defect yang dilaporkan customer, dan KPI QA yang dilaporkan ke manajemen.">Closed the loop between release and production: error monitoring, root cause analysis of customer-reported defects, and QA KPIs reported to management.</p>
+<dl>
+<div><dt data-id="Yang dibangun">Built</dt><dd data-id="Triage harian error production baru dan regresi di web dan mobile, plus dashboard metrik QA berbasis Python yang mencakup coverage, pass rate otomasi, release sign-off dan tren per kuartal">Daily triage of new and regressed production errors across web and mobile, plus a Python QA metrics dashboard covering coverage, automation pass rates, release sign-off and quarterly trends</dd></div>
+<div><dt data-id="Hasil">Outcome</dt><dd data-id="Deteksi masalah production lebih cepat dan pelaporan kualitas berbasis data">Faster detection of production issues and data-driven quality reporting</dd></div>
+</dl>
+<div class="tags"><span class="tag">Sentry</span><span class="tag">Root cause analysis</span><span class="tag">QA KPIs</span><span class="tag">Python</span></div>
+</article>
+</div>
+<div class="more-proj"><p data-id="Lihat enam proyek mini yang saya bangun, lengkap dengan tampilan dan detail teknisnya.">See the six mini projects I built, with previews and technical detail.</p><a class="btn btn-primary" href="#projects" data-id="Lihat proyek →">Explore projects →</a></div>
+</div>
+</section>
+<section class="block alt" id="skills">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-id="Keahlian &amp;amp; tools">Skills &amp; tools</span>
+<h2 data-id="Kompetensi inti">Core competencies</h2>
+</div>
+<div class="skills">
+<div class="skill"><h3 data-id="Strategi &amp;amp; manajemen test">Test strategy &amp; management</h3><div class="pills"><span class="pill">Test planning</span><span class="pill" data-id="Strategi regression">Regression strategy</span><span class="pill" data-id="Desain test case">Test case design</span><span class="pill">Release sign-off</span><span class="pill" data-id="Review requirement">Requirement review</span></div></div>
+<div class="skill"><h3 data-id="Otomasi testing">Test automation</h3><div class="pills"><span class="pill">Playwright</span><span class="pill">Cypress</span><span class="pill">WebdriverIO</span><span class="pill">Appium</span><span class="pill">Data-driven E2E</span></div></div>
+<div class="skill"><h3 data-id="AI dalam QA">AI in QA</h3><div class="pills"><span class="pill">LLM agents</span><span class="pill">Claude</span><span class="pill">Model Context Protocol</span><span class="pill" data-id="Eksekusi test berbasis AI">AI-driven test execution</span></div></div>
+<div class="skill"><h3>Mobile &amp; API testing</h3><div class="pills"><span class="pill">Native Android</span><span class="pill">Native iOS</span><span class="pill">Postman</span><span class="pill" data-id="Validasi REST API">REST API validation</span></div></div>
+<div class="skill"><h3>Observability &amp; delivery</h3><div class="pills"><span class="pill">Sentry</span><span class="pill">Root cause analysis</span><span class="pill" data-id="Integrasi CI/CD">CI/CD integration</span><span class="pill">Git</span></div></div>
+<div class="skill"><h3 data-id="Pemrograman &amp;amp; proses">Programming &amp; process</h3><div class="pills"><span class="pill">JavaScript</span><span class="pill">Python</span><span class="pill">Agile/Scrum</span><span class="pill">Jira</span><span class="pill">Confluence</span></div></div>
+</div>
+</div>
+</section>
+<section class="block" id="expertise">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-id="Keahlian domain">Domain expertise</span>
+<h2 data-id="Area yang saya kuasai mendalam">Where I go deep</h2>
+</div>
+<div class="exp">
+<div><b data-id="Pembayaran">Payments</b><small data-id="Kartu 3DS/OTP, PayPal, e-wallet, voucher, promo dan refund">Card 3DS/OTP, PayPal, e-wallets, vouchers, promotions and refunds</small></div>
+<div><b data-id="Pemesanan &amp;amp; aftersales">Booking &amp; aftersales</b><small data-id="Dari pencarian sampai detail order, refund, reschedule dan add-on">Search to order detail, refunds, reschedules and add-ons</small></div>
+<div><b data-id="Internasionalisasi">Internationalisation</b><small data-id="Multi-bahasa dan multi-mata uang, layout RTL">Multi-locale and multi-currency, RTL layouts</small></div>
+<div><b data-id="Autentikasi">Authentication</b><small data-id="SSO, OAuth, alur akun dan membership">SSO, OAuth, account and membership flows</small></div>
+<div><b data-id="Kualitas aplikasi mobile">Mobile app quality</b><small data-id="Android dan iOS native, deeplink, regression pre-release">Native Android and iOS, deeplinks, pre-release regression</small></div>
+<div><b data-id="Performa web &amp;amp; SEO">Web performance &amp; SEO</b><small data-id="Core Web Vitals (CLS), validasi SSR, landing page SEO">Core Web Vitals (CLS), SSR validation, SEO landing pages</small></div>
+<div><b data-id="Strategi regression">Regression strategy</b><small data-id="Smoke, sanity, regression dan exploratory testing">Smoke, sanity, regression and exploratory testing</small></div>
+<div><b data-id="Konsistensi lintas platform">Cross-platform parity</b><small data-id="Perilaku yang konsisten di desktop, mobile web dan native">Consistent behaviour across desktop, mobile web and native</small></div>
+</div>
+</div>
+</section>
+<section class="block alt" id="leadership">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-id="Kepemimpinan">Leadership</span>
+<h2 data-id="Menjalankan fungsi QA">Running a QA function</h2>
+</div>
+<div class="lead">
+<ul>
+<li data-id="Memimpin dan membina tim QA beranggotakan empat orang, termasuk onboarding ke alur kerja berbasis AI.">Lead and mentor a four-person QA team, including onboarding to AI-assisted workflows.</li>
+<li data-id="Mengelola pipeline QA di Jira, dari ready-for-QA, fix, done hingga rejected.">Manage the QA pipeline in Jira, from ready-for-QA through fix, done and rejected.</li>
+<li data-id="Bertanggung jawab atas sign-off rilis aplikasi native melalui regression pre-release yang terstruktur.">Own native app release sign-off through a structured pre-release regression.</li>
+<li data-id="Menyusun laporan QA mingguan dan kuartalan tentang throughput, insiden dan pertumbuhan test case.">Publish weekly and quarterly QA reports on throughput, incidents and test case growth.</li>
+<li data-id="Mereview requirement sebelum development untuk menemukan celah lebih awal.">Review requirements before development to catch gaps early.</li>
+</ul>
+<div>
+<div class="sops-title" data-id="SOP yang saya susun">Standard operating procedures I authored</div>
+<div class="sops">
+<span>Bug reporting</span><span data-id="Severity &amp;amp; prioritas">Severity &amp; priority</span><span>Retest &amp; reopen</span>
+<span>Smoke, sanity &amp; regression</span><span>Release sign-off</span><span>App pre-release</span>
+<span data-id="Review requirement">Requirement review</span><span data-id="Pembuatan test case">Test case creation</span><span data-id="Eksekusi test">Test execution</span>
+<span data-id="Defect smoke production">Production smoke defects</span><span>QA workflow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="block" id="education">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow" data-id="Pendidikan">Education</span>
+<h2>Bunda Mulia University</h2>
+</div>
+<div class="edu">
+<article class="edu-card">
+<span class="period">2017 – 2019</span>
+<h3>Master of Management</h3>
+<p class="muted">Leadership &amp; Strategy</p>
+</article>
+<article class="edu-card">
+<span class="period">2012 – 2016</span>
+<h3>Information Systems</h3>
+<p class="muted" data-id="Menjembatani teknologi dan bisnis">Bridging technology and business</p>
+</article>
+</div>
+</div>
+</section>
+<section class="block" id="contact" style="padding-top:0">
+<div class="wrap">
+<div class="contact-band">
+<div>
+<h2 data-id="Mari bicara soal kualitas">Let's talk quality</h2>
+<p data-id="Terbuka untuk diskusi seputar kepemimpinan QA, otomasi testing dan testing berbasis AI.">Open to conversations about QA leadership, test automation and AI-assisted testing.</p>
+</div>
+<div class="lines">
+<div class="line"><div><span class="k">Email</span><span class="v" id="email">sandy15player@gmail.com</span></div><button data-copy="email" data-id="Salin" type="button">Copy</button></div>
+<div class="line"><div><span class="k">LinkedIn</span><span class="v">jaka-putra-tikalung</span></div><a data-id="Buka" href="https://www.linkedin.com/in/jaka-putra-tikalung-03a529410" rel="noopener" target="_blank">Open</a></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<main id="projects" class="pview" hidden>
+  <header class="p-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-id="Proyek mini">Mini projects</span>
+      <h2 data-id="Hal-hal yang saya bangun">Things I built</h2>
+      <p class="lede" data-id="Enam alat internal yang saya rancang dan bangun untuk menjalankan fungsi QA modern. Nama perusahaan, data dan URL internal disembunyikan; tampilan di bawah memakai data contoh.">Six internal tools I designed and built to run a modern QA function. Company names, data and internal URLs are hidden; the previews below use sample data.</p>
+      <nav class="p-jump" aria-label="Projects">
+        <a href="#proj-dashboard">QA Command Center</a>
+        <a href="#proj-testcases">Test Case Management</a>
+        <a href="#proj-agents">AI QA Agents</a>
+        <a href="#proj-e2e">E2E Automation</a>
+        <a href="#proj-triage" data-id="Triage Komplain">Complaint Triage</a>
+        <a href="#proj-release" data-id="App Release Sign-off">App Release Sign-off</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 1 Dashboard -->
+  <section class="proj" id="proj-dashboard">
+    <div class="wrap proj-grid">
+      <div class="proj-text">
+        <span class="p-num">01</span>
+        <h3>QA Command Center</h3>
+        <p class="p-sum" data-id="Satu dashboard untuk seluruh tim QA: hasil E2E harian, katalog test case, pre-release app, triage komplain, performa tim dan laporan kuartalan. Diperbarui otomatis tiap 10 menit.">One dashboard for the whole QA team: daily E2E results, the test case catalog, app pre-release, complaint triage, team performance and quarterly reports. Refreshes automatically every 10 minutes.</p>
+        <ul class="feat">
+          <li data-id="Matriks run E2E per hari × skenario, dengan popup error dan alasan skip">E2E run matrix by day × scenario, with error and skip-reason popups</li>
+          <li data-id="Pencarian full-text di seluruh test case dengan viewer bawaan">Full-text search across every test case with a built-in viewer</li>
+          <li data-id="Laporan Q1–Q4: insiden, improvement, tim dan pertumbuhan test case">Q1–Q4 reports: incidents, improvements, team and test case growth</li>
+          <li data-id="Login bersama (cookie HMAC, rate-limit), build publik yang membuang field internal">Shared login (HMAC cookie, rate-limited), public build that strips internal fields</li>
+          <li data-id="Backup harian terenkripsi AES-256 ke dua lokasi">Encrypted AES-256 daily backup to two locations</li>
+          <li data-id="18 smoke check Playwright + 25 unit test dijalankan di setiap perubahan">18 Playwright smoke checks + 25 unit tests on every change</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">HTTP server</span><span class="tag">Jira API</span><span class="tag">Sentry API</span><span class="tag">Playwright</span><span class="tag">SVG charts</span></div>
+      </div>
+      <figure class="mock" aria-label="Dashboard preview with sample data">
+        <div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mock-tabs"><b>Overview</b><span>Test Cases</span><span>Pre-Release</span><span>Zendesk</span><span>Report</span></span></div>
+        <div class="mock-body">
+          <div class="kpis">
+            <div><small>E2E pass rate</small><b>96%</b></div>
+            <div><small>Test cases</small><b>4,000+</b></div>
+            <div><small>Open in QA</small><b>12</b></div>
+          </div>
+          <div class="matrix" role="img" aria-label="Sample run matrix">
+            <div class="mx-row mx-head"><span></span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+            <div class="mx-row"><span>Flight</span><i class="p"></i><i class="p"></i><i class="f"></i><i class="p"></i><i class="p"></i></div>
+            <div class="mx-row"><span>Hotel</span><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i></div>
+            <div class="mx-row"><span>Activity</span><i class="p"></i><i class="k"></i><i class="p"></i><i class="p"></i><i class="p"></i></div>
+            <div class="mx-row"><span>Train</span><i class="p"></i><i class="p"></i><i class="p"></i><i class="x"></i><i class="p"></i></div>
+            <div class="mx-row"><span>Bus</span><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i></div>
+          </div>
+          <div class="legend"><span><i class="p"></i>pass</span><span><i class="k"></i>flaky</span><span><i class="x"></i>fail</span><span><i class="f"></i>skip</span></div>
+        </div>
+        <figcaption data-id="Data contoh">Sample data</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2 Test cases -->
+  <section class="proj alt" id="proj-testcases">
+    <div class="wrap proj-grid rev">
+      <div class="proj-text">
+        <span class="p-num">02</span>
+        <h3>Test Case Management</h3>
+        <p class="p-sum" data-id="Sistem manajemen test case berbasis Markdown yang dirancang agar bisa dibaca manusia maupun AI: 4.000+ test case di 40+ file fitur, satu indeks, dan ID yang konsisten.">A Markdown-based test case management system designed to be read by people and AI alike: 4,000+ cases in 40+ feature files, one index, and consistent IDs.</p>
+        <ul class="feat">
+          <li data-id="Satu file per fitur dengan prefix Case ID (misalnya PAY, AUTH, FR)">One file per feature with a Case ID prefix (for example PAY, AUTH, FR)</li>
+          <li data-id="Folder terpisah untuk skenario E2E, regression pre-release dan insiden">Separate folders for E2E scenarios, pre-release regression and incidents</li>
+          <li data-id="Tiket Jira dikonversi otomatis menjadi test case dengan format standar">Jira tickets converted automatically into test cases in a standard format</li>
+          <li data-id="Audit konsistensi katalog untuk menemukan test case yang salah kategori">Catalog consistency audits that catch miscategorised cases</li>
+          <li data-id="File skenario langsung dipakai sebagai konfigurasi suite otomasi">Scenario files double as configuration for the automation suites</li>
+        </ul>
+        <div class="tags"><span class="tag">Test design</span><span class="tag">Markdown</span><span class="tag">Git</span><span class="tag">Information architecture</span></div>
+      </div>
+      <figure class="mock" aria-label="Test case catalog preview with sample data">
+        <div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">Test Cases / Payment.md</span></div>
+        <div class="mock-body tc">
+          <ul class="tree">
+            <li class="dir">Test Cases/</li>
+            <li>Auth.md</li><li>Flight-Search.md</li><li class="on">Payment.md</li><li>Hotel-Detail.md</li>
+            <li class="dir">Scenario/</li><li class="dir">Pre-Release/</li><li class="dir">Incident/</li>
+          </ul>
+          <div class="tc-table">
+            <div class="tc-row th"><span>ID</span><span>Scenario</span><span>Expected</span></div>
+            <div class="tc-row"><span class="id">PAY-001</span><span>Pay by card with 3DS</span><span>Redirect to order detail</span></div>
+            <div class="tc-row"><span class="id">PAY-002</span><span>Wrong OTP entered</span><span>Error shown, retry allowed</span></div>
+            <div class="tc-row"><span class="id">PAY-003</span><span>Apply voucher</span><span>Total recalculated</span></div>
+            <div class="tc-row"><span class="id">PAY-004</span><span>Pay by e-wallet</span><span>Status Paid</span></div>
+          </div>
+        </div>
+        <figcaption data-id="Data contoh">Sample data</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3 AI agents -->
+  <section class="proj" id="proj-agents">
+    <div class="wrap proj-grid">
+      <div class="proj-text">
+        <span class="p-num">03</span>
+        <h3>AI QA Agents</h3>
+        <p class="p-sum" data-id="35+ agent skill yang membuat AI bisa menguji tiket Jira sendiri: membaca tiket, menentukan platform, menjalankan test, mengumpulkan bukti, lalu memposting hasil QA yang terstruktur.">35+ agent skills that let AI test Jira tickets on its own: read the ticket, pick the platform, run the tests, collect evidence, and post a structured QA result.</p>
+        <ul class="feat">
+          <li data-id="Deteksi platform dari komponen tiket: desktop, mobile web, Android atau iOS">Platform detection from ticket components: desktop, mobile web, Android or iOS</li>
+          <li data-id="Status yang tegas: PASS, FAIL, NEED MANUAL atau NO TASK, tanpa status setengah">Strict verdicts: PASS, FAIL, NEED MANUAL or NO TASK, never partial</li>
+          <li data-id="Aturan bukti: klaim SSR, timing dan metrik dibuktikan dengan data teks, bukan screenshot">Evidence rules: SSR, timing and metric claims proven with text evidence, not screenshots</li>
+          <li data-id="Batas jumlah langkah per tiket agar biaya AI tetap terkendali">Per-ticket call budget to keep AI cost under control</li>
+          <li data-id="Skill terpisah untuk insiden, laporan mingguan dan triage Sentry harian">Separate skills for incidents, weekly reports and daily Sentry triage</li>
+        </ul>
+        <div class="tags"><span class="tag">LLM agents</span><span class="tag">Model Context Protocol</span><span class="tag">Jira REST API</span><span class="tag">Prompt engineering</span></div>
+      </div>
+      <figure class="mock term" aria-label="Agent run log with sample data">
+        <div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">agent · ticket QA</span></div>
+        <pre class="log"><span class="c">$</span> test ticket PROJ-1234
+<span class="d">›</span> components: Web  → desktop + mobile
+<span class="d">›</span> 4 dev test cases found
+<span class="d">›</span> TC1 search results sorted   <span class="ok">PASS</span>
+<span class="d">›</span> TC2 filter by airline        <span class="ok">PASS</span>
+<span class="d">›</span> TC3 empty state copy         <span class="bad">FAIL</span>
+<span class="d">›</span> TC4 CLS on result load       <span class="ok">PASS</span>
+<span class="d">›</span> evidence: 4 screenshots, 1 metric
+<span class="d">›</span> posted QA Result → Jira ✓</pre>
+        <figcaption data-id="Data contoh">Sample data</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 E2E -->
+  <section class="proj alt" id="proj-e2e">
+    <div class="wrap proj-grid rev">
+      <div class="proj-text">
+        <span class="p-num">04</span>
+        <h3>E2E Automation Framework</h3>
+        <p class="p-sum" data-id="Framework Playwright data-driven yang menguji lima lini produk dari pencarian sampai detail order, di desktop dan mobile, berjalan otomatis setiap hari.">A data-driven Playwright framework that tests five product lines from search to order detail, on desktop and mobile, running automatically every day.</p>
+        <ul class="feat">
+          <li data-id="Pesawat, hotel, aktivitas, kereta dan bus dalam satu framework">Flight, hotel, activity, train and bus in one framework</li>
+          <li data-id="Skenario dibaca dari file Markdown, jadi QA non-coder bisa mengubah test">Scenarios read from Markdown files, so non-coders can change tests</li>
+          <li data-id="Spec desktop dan mobile terpisah untuk layout yang berbeda">Separate desktop and mobile specs for different layouts</li>
+          <li data-id="Pembayaran kartu 3DS sampai verifikasi detail order">Card payment with 3DS through to order detail verification</li>
+          <li data-id="Otomasi aplikasi native Android dan iOS dengan Appium dan WebdriverIO">Native Android and iOS automation with Appium and WebdriverIO</li>
+        </ul>
+        <div class="tags"><span class="tag">Playwright</span><span class="tag">JavaScript</span><span class="tag">Appium</span><span class="tag">WebdriverIO</span><span class="tag">Data-driven testing</span></div>
+      </div>
+      <figure class="mock" aria-label="Scenario config and spec flow">
+        <div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">scenario → spec → report</span></div>
+        <div class="mock-body">
+          <div class="flow">
+            <div class="fbox"><small>config.md</small><code>TRIP: one-way<br>ROUTE: CGK → SIN<br>PAX: 2 adults<br>PAY: card 3DS</code></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <div class="fbox"><small>desktop.spec.js · mobile.spec.js</small><code>search()<br>selectFare()<br>fillPassengers()<br>pay3DS()<br>verifyOrder()</code></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <div class="fbox ok"><small>report</small><code>12 passed<br>1 flaky<br>0 failed</code></div>
+          </div>
+        </div>
+        <figcaption data-id="Data contoh">Sample data</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 5 Triage -->
+  <section class="proj" id="proj-triage">
+    <div class="wrap proj-grid">
+      <div class="proj-text">
+        <span class="p-num">05</span>
+        <h3 data-id="Triage Komplain Customer">Customer Complaint Triage</h3>
+        <p class="p-sum" data-id="Pipeline yang menghubungkan tiket helpdesk dengan jejak klik customer dan error production, lalu mengklasifikasikan apakah itu bug atau bukan. Seluruhnya read-only.">A pipeline that links each helpdesk ticket to the customer's click trail and production errors, then classifies whether it is a real bug. Fully read-only.</p>
+        <ul class="feat">
+          <li data-id="Tiket → ID customer → customer journey → pencarian error di Sentry">Ticket → customer ID → customer journey → Sentry error search</li>
+          <li data-id="Hasil pencarian Sentry: strong match, weak match, tidak ada error, atau gagal">Sentry outcome: strong match, weak match, no error, or search failed</li>
+          <li data-id="Klasifikasi 3 lapis: override manual → aturan deterministik → AI">3-tier classification: manual override → deterministic rules → AI</li>
+          <li data-id="Tiket yang terbukti bug otomatis dikirim ke channel Slack QA">Confirmed bugs pushed automatically to the QA Slack channel</li>
+        </ul>
+        <div class="tags"><span class="tag">Zendesk API</span><span class="tag">Sentry API</span><span class="tag">LLM classification</span><span class="tag">Root cause analysis</span></div>
+      </div>
+      <figure class="mock" aria-label="Triage pipeline with sample data">
+        <div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">complaint triage</span></div>
+        <div class="mock-body">
+          <ol class="pipe">
+            <li><b>Ticket</b><span>"Can't add baggage"</span></li>
+            <li><b>Journey</b><span>add-ons page → error toast</span></li>
+            <li><b>Sentry</b><span class="chip pass">strong match</span></li>
+            <li><b>Verdict</b><span class="chip bad">ISSUE</span><span class="chip info">Add-ons</span></li>
+          </ol>
+          <div class="tk">
+            <div class="tk-row"><span>#10231</span><span>Refund to voucher, want cash</span><span class="chip info">NOT ISSUE</span></div>
+            <div class="tk-row"><span>#10244</span><span>Payment page keeps loading</span><span class="chip bad">ISSUE</span></div>
+            <div class="tk-row"><span>#10252</span><span>Change passenger name</span><span class="chip info">NOT ISSUE</span></div>
+          </div>
+        </div>
+        <figcaption data-id="Data contoh">Sample data</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 6 Release -->
+  <section class="proj alt" id="proj-release">
+    <div class="wrap proj-grid rev">
+      <div class="proj-text">
+        <span class="p-num">06</span>
+        <h3>App Release Sign-off</h3>
+        <p class="p-sum" data-id="Proses sign-off rilis aplikasi Android dan iOS yang saya susun: SOP, checklist regression terstruktur, dan log pre-release di dashboard.">The Android and iOS release sign-off process I designed: an SOP, a structured regression checklist, and a pre-release log in the dashboard.</p>
+        <ul class="feat">
+          <li data-id="Checklist dijalankan terpisah untuk mobile web dan aplikasi native">Checklist run separately for mobile web and the native app</li>
+          <li data-id="Cakupan device low-end (RAM 2–4GB, OS lama) dan high-end (flagship, OS terbaru)">Low-end (2–4GB RAM, older OS) and high-end (flagship, latest OS) device coverage</li>
+          <li data-id="Otomasi di emulator untuk alur inti, manual untuk fitur baru">Automation on emulators for core flows, manual for new features</li>
+          <li data-id="Pembayaran diuji dua kali: kartu kredit dan non-kartu, plus voucher dan ganti mata uang">Payment tested twice, card and non-card, plus vouchers and currency change</li>
+          <li data-id="Log build baru, yang perlu dites, dan riwayat sign-off">Log of new builds, builds needing testing, and sign-off history</li>
+        </ul>
+        <div class="tags"><span class="tag">Release management</span><span class="tag">Android</span><span class="tag">iOS</span><span class="tag">Regression</span><span class="tag">SOP</span></div>
+      </div>
+      <figure class="mock" aria-label="Release checklist with sample data">
+        <div class="mock-bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="mono">release v5.x · sign-off</span></div>
+        <div class="mock-body">
+          <div class="rc">
+            <div class="rc-row th"><span>Check</span><span>Android</span><span>iOS</span></div>
+            <div class="rc-row"><span>Flight booking to order list</span><i class="y">✓</i><i class="y">✓</i></div>
+            <div class="rc-row"><span>Hotel booking to order list</span><i class="y">✓</i><i class="y">✓</i></div>
+            <div class="rc-row"><span>Card + non-card payment</span><i class="y">✓</i><i class="y">✓</i></div>
+            <div class="rc-row"><span>Voucher &amp; currency change</span><i class="y">✓</i><i class="w">…</i></div>
+            <div class="rc-row"><span>Low-end device (2GB RAM)</span><i class="y">✓</i><i class="n">–</i></div>
+          </div>
+          <div class="rc-foot"><span class="chip info">Needs testing: iOS</span></div>
+        </div>
+        <figcaption data-id="Data contoh">Sample data</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:24px">
+    <div class="wrap back-row">
+      <a class="btn btn-ghost" href="#top" data-id="← Kembali ke portofolio">← Back to portfolio</a>
+      <a class="btn btn-primary" href="#contact" data-id="Hubungi saya">Get in touch</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+<div class="wrap"><span>© 2026 Jaka Putra Tikalung</span><span>Jakarta, Indonesia</span></div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null;}}
+  /* theme */
+  var themeBtn=document.getElementById('themeBtn');
+  function effective(){var t=root.getAttribute('data-theme'); if(t==='dark'||t==='light') return t; return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var saved=store('theme'); if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved);
+  themeBtn.addEventListener('click',function(){var n=effective()==='dark'?'light':'dark'; root.setAttribute('data-theme',n); store('theme',n);});
+  /* language */
+  var lang='en', langBtn=document.getElementById('langBtn'), nodes=document.querySelectorAll('[data-id]');
+  function setLang(l){
+    nodes.forEach(function(el){ if(!el.hasAttribute('data-en')) el.setAttribute('data-en',el.innerHTML); el.innerHTML = l==='id' ? el.getAttribute('data-id') : el.getAttribute('data-en'); });
+    lang=l; root.lang=l;
+    langBtn.textContent = l==='id' ? 'EN' : 'ID';
+    langBtn.setAttribute('aria-label', l==='id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
+    store('lang',l);
+  }
+  langBtn.addEventListener('click',function(){ setLang(lang==='en'?'id':'en'); });
+  if(store('lang')==='id') setLang('id');
+
+  /* view router */
+  var mainView=document.getElementById('top'), projView=document.getElementById('projects');
+  function route(){
+    var h=location.hash.slice(1), isProj=(h==='projects'||h.indexOf('proj-')===0);
+    var changed = mainView.hidden!==isProj;
+    mainView.hidden=isProj; projView.hidden=!isProj;
+    document.querySelectorAll('a[href="#projects"]').forEach(function(a){ a.classList.toggle('current', isProj); });
+    var target = h && h!=='projects' ? document.getElementById(h) : null;
+    if(target) target.scrollIntoView(); else if(changed || h==='projects' || h==='top') scrollTo(0,0);
+  }
+  addEventListener('hashchange',route); route();
+  /* mobile menu */
+  var menuBtn=document.getElementById('menuBtn'), mnav=document.getElementById('mnav');
+  function closeMenu(){ mnav.hidden=true; menuBtn.setAttribute('aria-expanded','false'); }
+  menuBtn.addEventListener('click',function(){ var open=mnav.hidden; mnav.hidden=!open; menuBtn.setAttribute('aria-expanded', String(open)); });
+  mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+  addEventListener('resize',function(){ if(innerWidth>960) closeMenu(); });
+  /* copy */
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el=document.getElementById(btn.dataset.copy), text=el.textContent.trim();
+      var base = lang==='id' ? 'Salin' : 'Copy';
+      function done(){ btn.textContent = lang==='id' ? 'Tersalin' : 'Copied'; setTimeout(function(){ btn.textContent=base; },1500); }
+      function fallback(){ var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = lang==='id' ? 'Terpilih' : 'Selected'; }
+      try{ navigator.clipboard.writeText(text).then(done,fallback); }catch(e){ fallback(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
