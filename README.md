@@ -8,6 +8,9 @@ Personal portfolio site: 10+ years in software quality assurance, test automatio
 - Portfolio view: about, experience, case studies, skills, education, contact
 - Projects view (`#projects`): six mini projects with previews built on sample data
 - English / Bahasa Indonesia toggle, light / dark theme, mobile menu
+- `cv/CV_Jaka_Putra.pdf` — one-page CV (linked from the site)
+- `cv/cv.html` — CV template: edit it, then open in Chrome → Print → Save as PDF (A4, margins None, background graphics on). Keep it in sync with `index.html`
+- `og.png` — preview image shown when the link is shared (LinkedIn, WhatsApp)
 
 ## Run locally
 
